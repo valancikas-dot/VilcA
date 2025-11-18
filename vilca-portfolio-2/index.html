@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>VilcA - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <img src="assets/VilcA.png" alt="VilcA logo" height="48">
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav_home"></a></li>
+                <li><a href="#about" data-i18n="nav_about"></a></li>
+                <li><a href="#projects" data-i18n="nav_projects"></a></li>
+                <li><a href="#contact" data-i18n="nav_contact"></a></li>
+            </ul>
+            <div class="lang-switch">
+                <button onclick="switchLanguage('lt')">LT</button>
+                <button onclick="switchLanguage('en')">EN</button>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="hero">
+        <img src="assets/VilcA.png" alt="VilcA logo" style="height:120px;">
+        <h1 class="hero-title" data-i18n="hero_title"></h1>
+        <div class="hero-subtitle" data-i18n="hero_subtitle"></div>
+        <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary" data-i18n="btn_projects"></a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="btn_contact"></a>
+        </div>
+    </section>
+    <section id="about" class="section">
+        <h2 class="section-title" data-i18n="about_title"></h2>
+        <p class="section-subtitle" data-i18n="about_subtitle"></p>
+        <div style="display:flex;gap:32px;align-items:center;justify-content:center;">
+            <img src="assets/VilcA.png" alt="VilcA logo" style="height:80px;">
+            <div>
+                <p data-i18n="about_text1"></p>
+                <p data-i18n="about_text2"></p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="section">
+        <h2 class="section-title" data-i18n="projects_title"></h2>
+        <p class="section-subtitle" data-i18n="projects_subtitle"></p>
+        <div class="projects-grid" id="apps-container"></div>
+    </section>
+    <section id="contact" class="section">
+        <h2 class="section-title" data-i18n="contact_title"></h2>
+        <p class="section-subtitle" data-i18n="contact_subtitle"></p>
+        <form class="contact-form">
+            <label for="name" data-i18n="contact_name"></label>
+            <input type="text" id="name" name="name" required>
+            <label for="email" data-i18n="contact_email"></label>
+            <input type="email" id="email" name="email" required>
+            <label for="message" data-i18n="contact_message"></label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit" id="contact-btn"></button>
+        </form>
+    </section>
+    <footer>
+        <p data-i18n="copyright"></p>
+    </footer>
+    <script src="lang.js"></script>
+    <script src="apps.js"></script>
+    <script src="apps-render.js"></script>
+    <script>
+        applyTranslations();
+        renderApps(currentLang);
+    </script>
+</body>
+</html>
