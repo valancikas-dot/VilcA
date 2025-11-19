@@ -24,6 +24,8 @@ const portfolioTranslations = {
     contact_email: 'El. paštas',
     contact_message: 'Žinutė',
     contact_btn: 'Siųsti žinutę',
+    contact_toast: 'Ačiū! Žinutė gauta.',
+    contact_toast_sub: 'Atsakysime per 24 valandas.',
     copyright: '© ' + new Date().getFullYear() + ' VilcA Mobile Apps. Visos teisės saugomos.'
   },
   en: {
@@ -51,6 +53,8 @@ const portfolioTranslations = {
     contact_email: 'Email',
     contact_message: 'Message',
     contact_btn: 'Send message',
+    contact_toast: 'Thanks! Message received.',
+    contact_toast_sub: 'We reply within one business day.',
     copyright: '© ' + new Date().getFullYear() + ' VilcA Mobile Apps. All rights reserved.'
   }
 };
@@ -99,6 +103,8 @@ function applyTranslations() {
       link.setAttribute('href', `${base}?lang=${currentLang}`);
     }
   });
+
+  document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: currentLang } }));
 }
 
 function switchLanguage(lang) {
