@@ -3,11 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "44fc9cd0ec9fffe957d2a99ce3f9f146",
+const RESOURCES = {"flutter_bootstrap.js": "37280ef524e86758609be88bcf345848",
 "version.json": "ef370aefc08348b5fcdbd08da31fc55d",
 "index.html": "d613cc1ad8c47d222578d733c8297022",
 "/": "d613cc1ad8c47d222578d733c8297022",
-"main.dart.js": "fb3d734e55a9816839c898ca8c0056e2",
+"main.dart.js": "9fa5b941875f40fed0dcd23267559575",
 "lang.js": "20d1f2b8148d664f98abe30edb3b0e63",
 "flutter.js": "888483df48293866f9f41d3d9274a779",
 "rangis-details.html": "18a4dbf2fc18b17b9fbff463f50b4c03",
@@ -28,7 +28,7 @@ const RESOURCES = {"flutter_bootstrap.js": "44fc9cd0ec9fffe957d2a99ce3f9f146",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "33b7d9392238c04c131b6ce224e13711",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
 "assets/AssetManifest.bin": "791cb14992e69830fa5e1a5b9a2ed9f7",
-"assets/fonts/MaterialIcons-Regular.otf": "abd2ed4423d417d16a779d8e9ea71f66",
+"assets/fonts/MaterialIcons-Regular.otf": "083a1aedd66fce6aa77de9f609561e50",
 "assets/assets/vilca-logo.svg": "34aead01e18d63f53af9ae90f9e940ca",
 "assets/assets/Icon-192.png": "d41d8cd98f00b204e9800998ecf8427e",
 "assets/assets/AssetManifest.json": "9f0f97bf63ef2e18bca7c1a203bae69a",
