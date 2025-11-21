@@ -33,7 +33,7 @@ if [ "$1" == "--help" ] || [ "$1" == "-h" ] || [ -z "$1" ]; then
 fi
 
 TARGET="$1"
-METHOD="${2:---mixed}"
+METHOD="${2:--mixed}"
 
 # Check if target is a date or commit hash
 if git rev-parse "$TARGET" >/dev/null 2>&1; then
@@ -120,13 +120,13 @@ case $METHOD in
             if [ -z "$COMMITS_TO_REVERT" ]; then
                 echo "No commits to revert. Already at target or ahead."
             else
-                for commit in $COMMITS_TO_REVERT; do
-                    echo "Reverting: $(git log -1 --oneline $commit)"
+                while IFS= read -r commit; do
+                    echo "Reverting: $(git log -1 --oneline "$commit")"
                     git revert --no-edit "$commit" || {
                         echo "Conflict during revert. Resolve conflicts and run: git revert --continue"
                         exit 1
                     }
-                done
+                done <<< "$COMMITS_TO_REVERT"
                 echo "✓ Revert complete. New commits created."
             fi
         fi

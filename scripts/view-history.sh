@@ -55,19 +55,19 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Build the git log command
-CMD="git log --pretty=format:'%C(yellow)%h%C(reset) | %C(green)%ai%C(reset) | %C(blue)%an%C(reset) | %s'"
+# Build the git log command using array to avoid eval security issues
+GIT_ARGS=(log --pretty=format:'%C(yellow)%h%C(reset) | %C(green)%ai%C(reset) | %C(blue)%an%C(reset) | %s')
 
 if [ "$SHOW_ALL" = false ]; then
-    CMD="$CMD -n $NUM_COMMITS"
+    GIT_ARGS+=(-n "$NUM_COMMITS")
 fi
 
 if [ -n "$SINCE" ]; then
-    CMD="$CMD --since='$SINCE'"
+    GIT_ARGS+=(--since="$SINCE")
 fi
 
 if [ -n "$UNTIL" ]; then
-    CMD="$CMD --until='$UNTIL'"
+    GIT_ARGS+=(--until="$UNTIL")
 fi
 
 # Execute the command
@@ -75,7 +75,7 @@ echo "Showing commits..."
 echo ""
 printf "%-10s | %-28s | %-20s | %s\n" "HASH" "DATE & TIME" "AUTHOR" "MESSAGE"
 echo "--------------------------------------------------------------------------------------------------------"
-eval $CMD
+git "${GIT_ARGS[@]}"
 
 echo ""
 echo "--------------------------------------------------------------------------------------------------------"

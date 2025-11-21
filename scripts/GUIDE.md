@@ -223,11 +223,11 @@ git checkout backup-20251121
 
 ### Understanding the methods
 
-| Method | Changes Preserved | History Preserved | Safe for Shared Branch | Reversible |
-|--------|------------------|-------------------|----------------------|------------|
-| --soft | ✅ (staged)       | ❌                | ❌                   | ✅         |
-| --mixed| ✅ (unstaged)     | ❌                | ❌                   | ✅         |
-| --hard | ❌                | ❌                | ❌                   | ⚠️         |
-| --revert| ✅ (as new commits)| ✅              | ✅                   | ✅         |
+| Method   | Changes Preserved      | History Preserved | Safe for Shared Branch | Reversible |
+|----------|------------------------|-------------------|------------------------|------------|
+| --soft   | ✅ (staged)            | ❌                | ❌                     | ✅         |
+| --mixed  | ✅ (unstaged)          | ❌                | ❌                     | ✅         |
+| --hard   | ❌                     | ❌                | ❌                     | ⚠️         |
+| --revert | ✅ (as new commits)    | ✅                | ✅                     | ✅         |
 
 **Recommendation:** Use `--revert` for shared branches, `--soft` for local work.
