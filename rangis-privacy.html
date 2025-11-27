@@ -35,6 +35,8 @@
       cursor: pointer;
       font-weight: 600;
       box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      text-decoration: none;
+      display: inline-block;
     }
     .lang-switch {
       text-align: center;
@@ -54,9 +56,12 @@
       <h2 data-i18n="data"></h2>
       <ul>
         <li data-i18n="data_account"></li>
+        <li data-i18n="data_projects"></li>
+        <li data-i18n="data_media"></li>
+        <li data-i18n="data_messages"></li>
+        <li data-i18n="data_subscription"></li>
         <li data-i18n="data_usage"></li>
-        <li data-i18n="data_device"></li>
-        <li data-i18n="data_storage"></li>
+        <li data-i18n="data_contact"></li>
       </ul>
     </div>
 
@@ -64,8 +69,10 @@
       <h2 data-i18n="use"></h2>
       <ul>
         <li data-i18n="use_features"></li>
+        <li data-i18n="use_billing"></li>
         <li data-i18n="use_security"></li>
         <li data-i18n="use_support"></li>
+        <li data-i18n="use_ads"></li>
       </ul>
     </div>
 
@@ -75,8 +82,17 @@
     </div>
 
     <div class="section">
-      <h2 data-i18n="third_party"></h2>
-      <p data-i18n="third_party_text"></p>
+      <h2 data-i18n="sharing"></h2>
+      <ul>
+        <li data-i18n="sharing_firebase"></li>
+        <li data-i18n="sharing_stores"></li>
+        <li data-i18n="sharing_stripe"></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="retention"></h2>
+      <p data-i18n="retention_text"></p>
     </div>
 
     <div class="section">
@@ -90,7 +106,7 @@
     </div>
 
     <div style="margin-top:24px;">
-      <button class="btn" onclick="window.location.href='rangis-details.html?lang='+currentLang" data-i18n="back"></button>
+      <a class="btn" href="rangis-details.html?lang=lt" data-i18n="back"></a>
     </div>
   </div>
   <div class="lang-switch">
@@ -102,49 +118,68 @@
     const translations = {
       lt: {
         title: "Rangis – Privatumo politika",
-        updated: "Atnaujinta: 2025-11-21. Ši politika galioja „Rangis“ programėlei ir jos žiniatinklio versijai.",
+        updated: "Atnaujinta: 2025-11-27",
         data: "Kokius duomenis renkame",
-        data_account: "Paskyros duomenys: el. paštas, vardas/pavardė, šalies/kainos nustatymai.",
-        data_usage: "Naudojimo duomenys: veiksmai programoje (pvz., projektų kūrimas), diagnostika ir klaidos.",
-        data_device: "Įrenginio duomenys: OS versija, įrenginio modelis, kalba/regionas.",
-        data_storage: "Failai/nuotraukos, kuriuos įkeliate į projektus arba rinkos skelbimus.",
+        data_account: "Paskyra: el. paštas, vardas (jei pateikta), Firebase vartotojo ID.",
+        data_projects: "Projektų/klientų duomenys (sąmatos, sąskaitos, kontaktai), kuriuos įrašote.",
+        data_media: "Nuotraukos/vaizdo įrašai, kuriuos įkeliate (pvz., darbų eiga, medžiagos, kvitai).",
+        data_messages: "Žinutės / pokalbiai rinkoje ar komandos erdvėse.",
+        data_subscription: "Prenumeratos/pirkimo būsena (apmokėjimus tvarko Apple/Google/Stripe).",
+        data_usage: "Naudojimo ir diagnostikos duomenys: klaidų ir našumo logai, ribota įrenginio info, push žetonas.",
+        data_contact: "Žinutės iš kontaktų formos.",
         use: "Kaip naudojame duomenis",
-        use_features: "Funkcijų teikimui: projektai, sąmatos, sąskaitos, rinkos skelbimai ir žinutės.",
-        use_security: "Saugumui ir piktnaudžiavimo prevencijai, prisijungimo ir rolės valdymui.",
-        use_support: "Pagalbai ir komunikacijai, įskaitant el. laiškus ir pranešimus.",
-        payments: "Apmokėjimai ir prenumeratos",
-        payments_text: "Mobilioje versijoje apmokėjimus apdoroja „Apple“ / „Google Play“. Žiniatinklyje apmokėjimus apdoroja Stripe. Mes saugome tik prenumeratos būseną ir atitinkamą organizacijos aktyvumo žymą; kortelės duomenų nerenkame ir nesaugome.",
-        third_party: "Trečiųjų šalių paslaugos",
-        third_party_text: "Naudojame Firebase (auth, firestore, messaging), Stripe (žiniatinklio apmokėjimai), „Apple“/„Google Play“ atsiskaitymus. Šių paslaugų privatumo politika taikoma jų renkamiems duomenims.",
-        rights: "Jūsų teisės",
-        rights_text: "Galite prašyti prieigos, pataisymo ar ištrynimo. Taip pat galite atsisakyti prenumeratos „Apple“ / „Google Play“ paskyros nustatymuose arba pašalinti duomenis ištrindami paskyrą.",
+        use_features: "Programėlės funkcionalumui: projektai, sąmatos, sąskaitos, žinutės, pranešimai, prenumeratos teisės.",
+        use_billing: "Prenumeratos būsenai ir teisėms patikrinti (apmokėjimą apdoroja Apple/Google/Stripe).",
+        use_security: "Saugumui ir patikimumui: piktnaudžiavimo prevencija, klaidų taisymas, našumo gerinimas.",
+        use_support: "Pagalbai: atsakyti į užklausas, suteikti palaikymą.",
+        use_ads: "Nenaudojame jūsų duomenų reklamai ar trečiųjų šalių marketingui.",
+        payments: "Prenumeratos ir atšaukimas",
+        payments_text: "Rangis Premium – mėnesinė auto-pratęsiama. Kainą matysite prieš pirkimą. Apple: valdykite/atšaukite Apple ID „Subscriptions“ – atšaukus auto-pratęsimas sustoja laikotarpio pabaigoje. Google Play: valdykite/atšaukite Google Play prenumeratas – atšaukus auto-pratęsimas sustoja laikotarpio pabaigoje. Web/Stripe (jei taikoma): rašykite statyburangis@gmail.com, sustabdysime pratęsimą ir patvirtinsime el. paštu. Grąžinimus tvarko platforma.",
+        sharing: "Kam perduodame",
+        sharing_firebase: "Firebase (Auth, Firestore/Storage, Messaging/push, Crashlytics, Analytics) – duomenys gali būti tvarkomi už EEE ribų.",
+        sharing_stores: "Apple / Google Play – atsiskaitymams ir prenumeratos būsenai.",
+        sharing_stripe: "Stripe – jei naudojami žiniatinklio apmokėjimai.",
+        retention: "Saugojimas ir sauga",
+        retention_text: "Duomenis laikome tiek, kiek reikia paslaugai ir teisiniams reikalavimams. Prašymu galime ištrinti ar anonimizuoti. Duomenys saugomi Firebase su pramoniniais saugumo mechanizmais.",
+        rights: "Jūsų pasirinkimai",
+        rights_text: "Galite prašyti prieigos, kopijos ar ištrynimo el. paštu statyburangis@gmail.com. Galite išjungti pranešimus įrenginio nustatymuose; pašalinus programėlę, ateityje duomenys nebus renkami.",
         contact: "Kontaktai",
-        contact_text: "Dėl privatumo klausimų ar neteisėtų transakcijų rašykite: statyburangis@gmail.com",
+        contact_text: "El. paštas: statyburangis@gmail.com",
         back: "Grįžti"
       },
       en: {
         title: "Rangis – Privacy Policy",
-        updated: "Updated: 2025-11-21. This policy applies to the Rangis mobile and web app.",
-        data: "Data we collect",
-        data_account: "Account data: email, name, country/currency settings.",
-        data_usage: "Usage data: actions in the app (e.g., creating projects), diagnostics and errors.",
-        data_device: "Device data: OS version, device model, language/region.",
-        data_storage: "Files/photos you upload to projects or marketplace listings.",
+        updated: "Last updated: 2025-11-27",
+        data: "What we collect",
+        data_account: "Account: email, name (if provided), Firebase user ID.",
+        data_projects: "Project/client data you add (estimates, invoices, contacts).",
+        data_media: "Photos/videos you upload (e.g., progress, materials, receipts).",
+        data_messages: "Messages/chats in the marketplace or team spaces.",
+        data_subscription: "Subscription/purchase status (billing handled by Apple/Google/Stripe).",
+        data_usage: "Usage/diagnostics: crash/performance logs, limited device info, push notification token.",
+        data_contact: "Contact form messages.",
         use: "How we use data",
-        use_features: "To provide features: projects, estimates, invoices, marketplace listings and messaging.",
-        use_security: "For security and abuse prevention, login and role management.",
-        use_support: "For support and communication, including emails and notifications.",
-        payments: "Payments and subscriptions",
-        payments_text: "On mobile, payments are processed by Apple / Google Play. On web, payments are processed by Stripe. We store only subscription status and org activation flags; we do not collect or store card details.",
-        third_party: "Third-party services",
-        third_party_text: "We use Firebase (auth, firestore, messaging), Stripe (web payments), Apple/Google Play billing. Their respective privacy policies apply to data they collect.",
-        rights: "Your rights",
-        rights_text: "You may request access, correction, or deletion. You can cancel subscriptions in your Apple / Google Play account settings, or remove data by deleting your account.",
+        use_features: "App functionality: projects, estimates, invoices, messaging, notifications, subscriptions.",
+        use_billing: "Billing/entitlements: to know if premium is active (payment handled by Apple/Google/Stripe).",
+        use_security: "Security/reliability: prevent abuse, debug issues, improve performance.",
+        use_support: "Support: respond to your requests.",
+        use_ads: "We do not use your data for advertising or third-party marketing.",
+        payments: "Subscriptions and cancellations",
+        payments_text: "Rangis Premium is monthly auto-renewing. Pricing is shown before purchase. Apple: manage/cancel in Apple ID Subscriptions; auto-renew stops at period end. Google Play: manage/cancel in Google Play subscriptions; auto-renew stops at period end. Web/Stripe (if used): email statyburangis@gmail.com to cancel; we will stop renewal and confirm by email. Refunds are handled by the respective platform.",
+        sharing: "Sharing",
+        sharing_firebase: "Firebase (Auth, Firestore/Storage, Messaging for push, Crashlytics, Analytics) – data may be processed inside/outside the EEA.",
+        sharing_stores: "Apple App Store / Google Play – billing and subscription management.",
+        sharing_stripe: "Stripe for web payments, if applicable.",
+        retention: "Retention and security",
+        retention_text: "We keep data only as long as needed for the service and legal obligations. On request we can delete or anonymize. Data is stored in Firebase with industry-standard security.",
+        rights: "Your choices",
+        rights_text: "Request access/export/deletion via statyburangis@gmail.com. You can disable notifications in device settings; removing the app stops future data collection.",
         contact: "Contact",
-        contact_text: "Privacy or dispute questions: statyburangis@gmail.com",
+        contact_text: "Email: statyburangis@gmail.com",
         back: "Back"
       }
     };
+
     function getLang() {
       const params = new URLSearchParams(window.location.search);
       return params.get("lang") || "lt";
@@ -154,6 +189,12 @@
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         el.innerHTML = translations[currentLang][key] || key;
+      });
+      // update back link lang param
+      document.querySelectorAll("a.btn").forEach(el => {
+        const url = new URL(el.href, window.location.href);
+        url.searchParams.set("lang", currentLang);
+        el.href = url.toString();
       });
     }
     function switchLanguage(lang) {
