@@ -34,21 +34,50 @@
 </head>
 <body>
   <script>
-    // Hide privacy/terms buttons on main cards (leave site content intact)
+    // Add floating Privacy + Terms buttons (with subscription info page) on all pages
     (function () {
-      const hideLabels = ["Privatumo politika", "Privacy Policy", "Terms of Use", "Naudojimosi taisyklės"];
-      const hideButtons = () => {
-        document.querySelectorAll("a, button").forEach((el) => {
-          const txt = (el.textContent || "").trim();
-          if (hideLabels.includes(txt)) {
-            el.style.display = "none";
-          }
-        });
+      const qs = new URLSearchParams(window.location.search);
+      const lang = qs.get("lang") || "lt";
+      const labels = {
+        lt: { privacy: "Privatumo politika", terms: "Naudojimosi taisyklės" },
+        en: { privacy: "Privacy Policy", terms: "Terms of Use" }
       };
-      const observer = new MutationObserver(hideButtons);
-      observer.observe(document.documentElement, { childList: true, subtree: true });
-      window.addEventListener("load", hideButtons);
-      hideButtons();
+      const urls = {
+        privacy: `rangis-privacy.html?lang=${lang}`,
+        terms: `rangis-terms.html?lang=${lang}`
+      };
+
+      const addFloatingButtons = () => {
+        if (document.getElementById("legal-floating")) return;
+        const wrap = document.createElement("div");
+        wrap.id = "legal-floating";
+        wrap.style.position = "fixed";
+        wrap.style.bottom = "20px";
+        wrap.style.right = "20px";
+        wrap.style.zIndex = "9999";
+        wrap.style.display = "flex";
+        wrap.style.gap = "8px";
+        wrap.style.flexWrap = "wrap";
+
+        const btnStyle = (bg) =>
+          `background:${bg};color:#fff;border:none;padding:10px 14px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.25);text-decoration:none;`;
+
+        const privacyBtn = document.createElement("a");
+        privacyBtn.href = urls.privacy;
+        privacyBtn.textContent = (labels[lang] || labels.lt).privacy;
+        privacyBtn.style.cssText = btnStyle("#2e7d32");
+
+        const termsBtn = document.createElement("a");
+        termsBtn.href = urls.terms;
+        termsBtn.textContent = (labels[lang] || labels.lt).terms;
+        termsBtn.style.cssText = btnStyle("#1e88e5");
+
+        wrap.appendChild(privacyBtn);
+        wrap.appendChild(termsBtn);
+        document.body.appendChild(wrap);
+      };
+
+      window.addEventListener("load", addFloatingButtons);
     })();
   </script>
   <script src="flutter_bootstrap.js" async></script>
