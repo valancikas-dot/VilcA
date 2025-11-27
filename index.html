@@ -34,23 +34,47 @@
 </head>
 <body>
   <script>
-    // Hide privacy/terms buttons on the main cards only (keep them visible on details pages)
+    // Show floating Privacy + Terms buttons on main page with subscription info links
     (function () {
       const isMain = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
       if (!isMain) return;
-      const hideLabels = ["Privatumo politika", "Privacy Policy", "Terms of Use", "Naudojimosi taisyklės"];
-      const hideButtons = () => {
-        document.querySelectorAll("a, button").forEach((el) => {
-          const txt = (el.textContent || "").trim();
-          if (hideLabels.includes(txt)) {
-            el.style.display = "none";
-          }
-        });
+      const qs = new URLSearchParams(window.location.search);
+      const lang = qs.get("lang") || "lt";
+      const labels = {
+        lt: { privacy: "Privatumo politika", terms: "Naudojimosi taisyklės" },
+        en: { privacy: "Privacy Policy", terms: "Terms of Use" }
       };
-      const observer = new MutationObserver(hideButtons);
-      observer.observe(document.documentElement, { childList: true, subtree: true });
-      window.addEventListener("load", hideButtons);
-      hideButtons();
+      const urls = {
+        privacy: `rangis-privacy.html?lang=${lang}`,
+        terms: `rangis-terms.html?lang=${lang}`
+      };
+
+      const addFloating = () => {
+        if (document.getElementById("legal-floating")) return;
+        const wrap = document.createElement("div");
+        wrap.id = "legal-floating";
+        wrap.style.position = "fixed";
+        wrap.style.bottom = "20px";
+        wrap.style.right = "20px";
+        wrap.style.zIndex = "9999";
+        wrap.style.display = "flex";
+        wrap.style.gap = "8px";
+        wrap.style.flexWrap = "wrap";
+
+        const btn = (text, href, bg) => {
+          const a = document.createElement("a");
+          a.href = href;
+          a.textContent = text;
+          a.style.cssText = `background:${bg};color:#fff;border:none;padding:12px 16px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.25);`;
+          return a;
+        };
+
+        wrap.appendChild(btn((labels[lang] || labels.lt).privacy, urls.privacy, "#2e7d32"));
+        wrap.appendChild(btn((labels[lang] || labels.lt).terms, urls.terms, "#1e88e5"));
+        document.body.appendChild(wrap);
+      };
+
+      window.addEventListener("load", addFloating);
     })();
   </script>
   <script src="flutter_bootstrap.js" async></script>
