@@ -34,35 +34,21 @@
 </head>
 <body>
   <script>
-    // Inject Terms of Use button next to existing Privacy button for Rangis card
+    // Hide privacy/terms buttons on main cards (leave site content intact)
     (function () {
-      const findAndInject = () => {
-        const privacyLabels = ["Privatumo politika", "Privacy Policy"];
-        const termsLabel = {
-          lt: "Naudojimosi taisyklės",
-          en: "Terms of Use"
-        };
-        const buttons = Array.from(document.querySelectorAll("a, button"));
-        const privacyBtn = buttons.find((el) => {
+      const hideLabels = ["Privatumo politika", "Privacy Policy", "Terms of Use", "Naudojimosi taisyklės"];
+      const hideButtons = () => {
+        document.querySelectorAll("a, button").forEach((el) => {
           const txt = (el.textContent || "").trim();
-          return privacyLabels.includes(txt);
+          if (hideLabels.includes(txt)) {
+            el.style.display = "none";
+          }
         });
-        if (!privacyBtn || privacyBtn.dataset.termsInjected) return;
-
-        const lang = (privacyBtn.textContent || "").includes("Privatumo") ? "lt" : "en";
-        const termsBtn = privacyBtn.cloneNode(true);
-        termsBtn.dataset.termsInjected = "true";
-        termsBtn.textContent = termsLabel[lang];
-        termsBtn.setAttribute("href", `rangis-terms.html?lang=${lang}`);
-        termsBtn.onclick = () => { window.location.href = `rangis-terms.html?lang=${lang}`; };
-        privacyBtn.dataset.termsInjected = "true";
-        privacyBtn.parentNode.insertBefore(termsBtn, privacyBtn.nextSibling);
       };
-
-      const observer = new MutationObserver(findAndInject);
+      const observer = new MutationObserver(hideButtons);
       observer.observe(document.documentElement, { childList: true, subtree: true });
-      window.addEventListener("load", findAndInject);
-      findAndInject();
+      window.addEventListener("load", hideButtons);
+      hideButtons();
     })();
   </script>
   <script src="flutter_bootstrap.js" async></script>
