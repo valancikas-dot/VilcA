@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <title>Rangis – Terms of Use</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #181818;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 48px auto;
+      background: #232323;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      padding: 32px;
+    }
+    h1, h2 {
+      color: #FF9800;
+    }
+    p, li {
+      line-height: 1.6;
+    }
+    .btn {
+      background: linear-gradient(90deg,#FF9800,#FFD700);
+      color: #181818;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .lang-switch {
+      text-align: center;
+      margin-top: 16px;
+    }
+    .section {
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 data-i18n="title"></h1>
+    <p data-i18n="updated"></p>
+
+    <div class="section">
+      <h2 data-i18n="use"></h2>
+      <p data-i18n="use_text"></p>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="subscription"></h2>
+      <ul>
+        <li data-i18n="sub_title"></li>
+        <li data-i18n="sub_length"></li>
+        <li data-i18n="sub_price"></li>
+        <li data-i18n="sub_manage"></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="billing"></h2>
+      <p data-i18n="billing_text"></p>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="termination"></h2>
+      <p data-i18n="termination_text"></p>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="contact"></h2>
+      <p data-i18n="contact_text"></p>
+    </div>
+
+    <div style="margin-top:24px;">
+      <button class="btn" onclick="window.location.href='index.html'" data-i18n="back"></button>
+    </div>
+  </div>
+  <div class="lang-switch">
+    <button onclick="switchLanguage('lt')">LT</button>
+    <button onclick="switchLanguage('en')">EN</button>
+  </div>
+
+  <script>
+    const translations = {
+      lt: {
+        title: "Rangis – Naudojimosi taisyklės",
+        updated: "Atnaujinta: 2025-11-27",
+        use: "Naudojimas",
+        use_text: "Naudodamiesi „Rangis“ sutinkate su šiomis taisyklėmis ir įsipareigojate naudoti programėlę teisėtais tikslais, nepažeisdami kitų vartotojų ar trečiųjų šalių teisių.",
+        subscription: "Prenumerata ir atnaujinimas",
+        sub_title: "Prenumeratos pavadinimas: Rangis Premium.",
+        sub_length: "Trukmė: 1 mėnuo, auto-pratęsimas, jei neatšaukiate.",
+        sub_price: "Kaina: rodoma perkant pagal jūsų regioną. 9,99 € / mėn. kaip pavyzdinė kaina ES.",
+        sub_manage: "Valdymas: atšaukti ar pakeisti prenumeratą galite App Store / Google Play paskyros nustatymuose.",
+        billing: "Apmokėjimai ir bandymas",
+        billing_text: "Mokėjimus apdoroja atitinkama platforma (Apple / Google). Jei suteikiamas bandomasis laikotarpis, atnaujinimas įvyks automatiškai, nebent atšaukiate iki atnaujinimo datos. Nenaudojami laikotarpiai negrąžinami.",
+        termination: "Nutraukimas",
+        termination_text: "Pažeidus taisykles galime apriboti prieigą. Duomenų pašalinimą galite inicijuoti ištrindami paskyrą arba kreipdamiesi el. paštu.",
+        contact: "Kontaktai",
+        contact_text: "Klausimai dėl naudojimosi taisyklių: statyburangis@gmail.com, tel. +447889704018.",
+        back: "Grįžti atgal"
+      },
+      en: {
+        title: "Rangis – Terms of Use",
+        updated: "Updated: 2025-11-27",
+        use: "Use of the app",
+        use_text: "By using Rangis you agree to these Terms and commit to lawful use without infringing the rights of other users or third parties.",
+        subscription: "Subscription and renewal",
+        sub_title: "Subscription title: Rangis Premium.",
+        sub_length: "Length: 1 month, auto-renews unless cancelled.",
+        sub_price: "Price: shown at purchase based on your region. €9.99 / month as an example EU price.",
+        sub_manage: "Manage: cancel or change in your App Store / Google Play account settings.",
+        billing: "Billing and trial",
+        billing_text: "Payments are processed by the platform (Apple / Google). If a trial is offered, renewal happens automatically unless you cancel before renewal. Unused periods are non-refundable.",
+        termination: "Termination",
+        termination_text: "We may restrict access if Terms are violated. You can request data removal by deleting your account or contacting us.",
+        contact: "Contact",
+        contact_text: "Questions about these Terms: statyburangis@gmail.com, tel. +447889704018.",
+        back: "Go back"
+      }
+    };
+
+    function getLang() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("lang") || "lt";
+    }
+    let currentLang = getLang();
+    function applyTranslations() {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.innerHTML = translations[currentLang][key] || `MISSING: ${key}`;
+      });
+    }
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", lang);
+      window.history.replaceState({}, "", url);
+      applyTranslations();
+    }
+    document.addEventListener("DOMContentLoaded", applyTranslations);
+  </script>
+</body>
+</html>

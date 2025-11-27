@@ -33,6 +33,38 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script>
+    // Inject Terms of Use button next to existing Privacy button for Rangis card
+    (function () {
+      const findAndInject = () => {
+        const privacyLabels = ["Privatumo politika", "Privacy Policy"];
+        const termsLabel = {
+          lt: "Naudojimosi taisyklės",
+          en: "Terms of Use"
+        };
+        const buttons = Array.from(document.querySelectorAll("a, button"));
+        const privacyBtn = buttons.find((el) => {
+          const txt = (el.textContent || "").trim();
+          return privacyLabels.includes(txt);
+        });
+        if (!privacyBtn || privacyBtn.dataset.termsInjected) return;
+
+        const lang = (privacyBtn.textContent || "").includes("Privatumo") ? "lt" : "en";
+        const termsBtn = privacyBtn.cloneNode(true);
+        termsBtn.dataset.termsInjected = "true";
+        termsBtn.textContent = termsLabel[lang];
+        termsBtn.setAttribute("href", `rangis-terms.html?lang=${lang}`);
+        termsBtn.onclick = () => { window.location.href = `rangis-terms.html?lang=${lang}`; };
+        privacyBtn.dataset.termsInjected = "true";
+        privacyBtn.parentNode.insertBefore(termsBtn, privacyBtn.nextSibling);
+      };
+
+      const observer = new MutationObserver(findAndInject);
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      window.addEventListener("load", findAndInject);
+      findAndInject();
+    })();
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
