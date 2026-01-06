@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazero kainos | Elektros testavimo programėlės planai</title>
+    <meta name="description" content="Fazero kaina: 14.99€/mėn. už visas funkcijas. Elektros instaliacijų bandymai, protokolai, matavimai. Neriboti darbuotojai ir dokumentai.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/fazero/pricing/">
+    <link rel="alternate" hreflang="lt" href="https://www.vilca.site/apps/fazero/pricing/">
+    <link rel="alternate" hreflang="en" href="https://www.vilca.site/apps/fazero/en/pricing/">
+    
+    <meta property="og:title" content="Fazero kainos – Elektros testavimo programėlė">
+    <meta property="og:description" content="14.99€/mėn. – elektros bandymai, protokolai, matavimai.">
+    <meta property="og:url" content="https://www.vilca.site/apps/fazero/pricing/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/fazero_logo.png">
+    
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 48px 24px; }
+        .breadcrumb { margin-bottom: 24px; font-size: 0.9rem; }
+        .breadcrumb a { color: #6e7681; text-decoration: none; }
+        .breadcrumb a:hover { color: #58a6ff; }
+        .breadcrumb span { color: #484f58; margin: 0 8px; }
+        h1 { color: #58a6ff; font-size: 2.5rem; margin-bottom: 16px; text-align: center; }
+        .subtitle { text-align: center; color: #8b949e; margin-bottom: 48px; font-size: 1.2rem; }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .pricing-card {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        .pricing-card.featured {
+            border: 2px solid #58a6ff;
+            box-shadow: 0 8px 32px rgba(88, 166, 255, 0.2);
+        }
+        .plan-name { font-size: 1.3rem; color: #7ee787; margin-bottom: 8px; }
+        .plan-desc { color: #8b949e; margin-bottom: 16px; font-size: 0.9rem; }
+        .price { font-size: 3rem; color: #fff; font-weight: 700; }
+        .price-period { color: #6e7681; font-size: 1rem; margin-bottom: 24px; }
+        .feature-list { text-align: left; margin: 24px 0; }
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #30363d;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #8b949e;
+        }
+        .feature-list li::before { content: "✅"; font-size: 0.9rem; }
+        .feature-list li.disabled::before { content: "❌"; }
+        .feature-list li.disabled { color: #484f58; }
+        .btn-primary {
+            background: linear-gradient(90deg, #238636, #2ea043);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 16px;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #58a6ff;
+            color: #58a6ff;
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 16px;
+        }
+        section {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        h2 { color: #58a6ff; font-size: 1.5rem; margin-bottom: 20px; }
+        nav.internal-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+        nav.internal-links a {
+            color: #58a6ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #58a6ff;
+            border-radius: 8px;
+        }
+        footer { text-align: center; padding: 32px; color: #6e7681; font-size: 0.9rem; }
+        footer a { color: #58a6ff; text-decoration: none; }
+        .badge {
+            background: #58a6ff;
+            color: #0d1117;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Fazero",
+        "description": "Elektros instaliacijų testavimo ir protokolų generavimo programėlė",
+        "brand": {
+            "@type": "Brand",
+            "name": "VilcA"
+        },
+        "offers": {
+            "@type": "Offer",
+            "name": "Fazero Pro",
+            "url": "https://www.vilca.site/apps/fazero/pricing/",
+            "priceCurrency": "EUR",
+            "price": "14.99",
+            "availability": "https://schema.org/PreOrder",
+            "priceValidUntil": "2026-12-31"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/fazero/">Fazero</a>
+            <span>›</span>
+            Kainos
+        </nav>
+        
+        <h1>💰 Fazero kainos</h1>
+        <p class="subtitle">Viena kaina – visos funkcijos. Be paslėptų mokesčių.</p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card featured">
+                <div class="plan-name">⚡ Fazero Pro</div>
+                <div class="plan-desc">Elektrikams ir instaliacijos įmonėms</div>
+                <div class="price">14.99 €</div>
+                <div class="price-period">per mėnesį</div>
+                
+                <ul class="feature-list">
+                    <li>Instaliacijų bandymai pagal LST HD 60364</li>
+                    <li>Matavimų registravimas</li>
+                    <li>Automatiniai PDF protokolai</li>
+                    <li>Elektroninis žurnalas</li>
+                    <li>Neriboti darbuotojai</li>
+                    <li>Neriboti dokumentai</li>
+                    <li>Offline darbas</li>
+                    <li>Prioritetinis palaikymas</li>
+                </ul>
+                
+                <span class="btn-secondary" style="opacity: 0.7; cursor: default;">🚀 Jau greitai!</span>
+                <p style="color: #6e7681; margin-top: 8px; font-size: 0.85rem;">Fazero bus prieinama 2026 m.</p>
+            </div>
+        </div>
+        
+        <section>
+            <h2>❓ Dažni klausimai apie kainas</h2>
+            
+            <div style="margin-bottom: 24px;">
+                <h3 style="color: #7ee787; margin-bottom: 8px;">Kodėl viena kaina?</h3>
+                <p style="color: #8b949e;">Suprantame, kad elektros įmonės turi skirtingo dydžio komandas. Mokate vieną kainą – nepriklausomai nuo darbuotojų skaičiaus.</p>
+            </div>
+            
+            <div style="margin-bottom: 24px;">
+                <h3 style="color: #7ee787; margin-bottom: 8px;">Kada bus prieinama Fazero?</h3>
+                <p style="color: #8b949e;">Fazero šiuo metu kuriama. Planuojame išleisti 2026 metais. Susisiekite ir pranešime kai bus paruošta!</p>
+            </div>
+            
+            <div>
+                <h3 style="color: #7ee787; margin-bottom: 8px;">Ar bus nemokamas bandomasis laikotarpis?</h3>
+                <p style="color: #8b949e;">Taip, planuojame 14 dienų nemokamą bandomąjį laikotarpį.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>📧 Sužinokite pirmieji</h2>
+            <p style="color: #8b949e; margin-bottom: 16px;">Norite sužinoti kai Fazero bus paruošta? Susisiekite su mumis!</p>
+            <a href="mailto:vilcastudioapp@gmail.com" style="color: #58a6ff;">📧 vilcastudioapp@gmail.com</a>
+        </section>
+        
+        <nav class="internal-links">
+            <a href="/apps/fazero/">← Grįžti į Fazero</a>
+            <a href="/apps/fazero/faq/">❓ DUK</a>
+            <a href="/apps/fazero/privacy/">🔒 Privatumas</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. Visos teisės saugomos.</p>
+        <p><a href="/">Pagrindinis</a> · <a href="/apps/rangis/">Rangis</a></p>
+    </footer>
+</body>
+</html>

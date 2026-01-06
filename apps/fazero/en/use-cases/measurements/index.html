@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Record Electrical Measurements - Fazero Tutorial | VilcA</title>
+    <meta name="description" content="How to record electrical measurements: insulation resistance, earth continuity, loop impedance with Fazero app.">
+    <meta name="keywords" content="electrical measurements, insulation resistance, loop impedance, earth continuity">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/fazero/en/use-cases/measurements/">
+    <link rel="alternate" hreflang="lt" href="https://www.vilca.site/apps/fazero/use-cases/matavimai/">
+    <link rel="alternate" hreflang="en" href="https://www.vilca.site/apps/fazero/en/use-cases/measurements/">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .breadcrumb { margin-bottom: 24px; font-size: 0.9rem; }
+        .breadcrumb a { color: #8b949e; text-decoration: none; }
+        .breadcrumb a:hover { color: #58a6ff; }
+        .breadcrumb span { color: #484f58; margin: 0 8px; }
+        h1 { font-size: 2rem; color: #58a6ff; margin-bottom: 24px; }
+        .intro { font-size: 1.1rem; color: #8b949e; margin-bottom: 32px; }
+        .step { background: #21262d; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #7ee787; }
+        .step-number { background: #7ee787; color: #0d1117; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 12px; }
+        .step h3 { color: #c9d1d9; display: inline; }
+        .step p { color: #8b949e; margin-top: 12px; }
+        .measurement-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+        .measurement-type { background: #161b22; padding: 16px; border-radius: 8px; border: 1px solid #30363d; }
+        .measurement-type h4 { color: #7ee787; font-size: 0.95rem; margin-bottom: 8px; }
+        .measurement-type p { color: #8b949e; font-size: 0.85rem; margin: 0; }
+        .tip { background: #1f3a5f; border: 1px solid #58a6ff; border-radius: 8px; padding: 16px; margin: 24px 0; }
+        .tip strong { color: #58a6ff; }
+        .cta { text-align: center; margin-top: 40px; padding: 32px; background: #21262d; border-radius: 16px; }
+        .cta span { background: #f0883e; color: white; padding: 14px 32px; border-radius: 8px; font-weight: 600; display: inline-block; }
+        footer { text-align: center; padding: 32px; color: #6e7681; border-top: 1px solid #21262d; margin-top: 48px; }
+        footer a { color: #58a6ff; text-decoration: none; }
+        .lang-switch { position: absolute; top: 20px; right: 20px; }
+        .lang-switch a { color: #58a6ff; text-decoration: none; padding: 8px 16px; border: 1px solid #30363d; border-radius: 8px; }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Record Electrical Measurements with Fazero",
+        "description": "Guide for recording electrical measurements according to IEC 60364",
+        "step": [
+            {"@type": "HowToStep", "name": "Select measurement type", "text": "Choose measurement type: insulation, continuity, loop impedance, RCD."},
+            {"@type": "HowToStep", "name": "Enter circuit information", "text": "Specify which circuit you are measuring."},
+            {"@type": "HowToStep", "name": "Record measurement value", "text": "Enter measured value and instrument details."},
+            {"@type": "HowToStep", "name": "Automatic validation", "text": "App checks if value meets standard requirements."}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="lang-switch">
+        <a href="/apps/fazero/use-cases/matavimai/">🇱🇹 LT</a>
+    </div>
+    
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/fazero/en/">Fazero</a>
+            <span>›</span>
+            <a href="/apps/fazero/en/use-cases/measurements/">Measurements</a>
+        </nav>
+        
+        <h1>📏 How to Record Electrical Measurements</h1>
+        <p class="intro">Learn how to efficiently record all required electrical measurements for IEC 60364 compliance.</p>
+        
+        <h2 style="color: #58a6ff; margin-bottom: 16px;">Supported Measurement Types</h2>
+        <div class="measurement-types">
+            <div class="measurement-type">
+                <h4>Insulation Resistance</h4>
+                <p>L-N, L-PE, N-PE measurements in MΩ</p>
+            </div>
+            <div class="measurement-type">
+                <h4>Earth Continuity</h4>
+                <p>Protective conductor continuity in Ω</p>
+            </div>
+            <div class="measurement-type">
+                <h4>Loop Impedance</h4>
+                <p>Earth fault loop impedance Zs in Ω</p>
+            </div>
+            <div class="measurement-type">
+                <h4>RCD Testing</h4>
+                <p>Trip time and trip current</p>
+            </div>
+            <div class="measurement-type">
+                <h4>Polarity Check</h4>
+                <p>Correct wiring verification</p>
+            </div>
+            <div class="measurement-type">
+                <h4>Voltage Measurement</h4>
+                <p>Supply voltage at origin and endpoints</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>Select Circuit</h3>
+            <p>In your installation, select the circuit you're testing (e.g., "Kitchen sockets", "Lighting circuit 1").</p>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Choose Measurement Type</h3>
+            <p>Select which measurement you're performing. App will show required minimum/maximum values for that measurement type.</p>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">3</span>
+            <h3>Enter Measurement Value</h3>
+            <p>Enter the measured value. You can also record test instrument serial number for traceability.</p>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">4</span>
+            <h3>Review Automatic Validation</h3>
+            <p>Fazero instantly validates the measurement against IEC 60364 requirements. Pass/fail is clearly indicated.</p>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">5</span>
+            <h3>Add Notes if Needed</h3>
+            <p>For failed measurements or special cases, add notes explaining the situation or remedial actions.</p>
+        </div>
+        
+        <div class="tip">
+            <strong>💡 Pro tip:</strong> Save your test instrument details once – they'll be automatically added to all measurements!
+        </div>
+        
+        <div class="cta">
+            <p style="margin-bottom: 16px; color: #8b949e;">Fazero is coming soon!</p>
+            <span>🚀 Coming Soon</span>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. All rights reserved.</p>
+        <p style="margin-top: 8px;">
+            <a href="/apps/fazero/en/use-cases/testing/">← Testing</a> · 
+            <a href="/apps/fazero/en/">Fazero</a> · 
+            <a href="/apps/fazero/en/use-cases/protocols/">Protocols →</a>
+        </p>
+    </footer>
+</body>
+</html>

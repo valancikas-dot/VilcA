@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangis - Construction Management App | VilcA</title>
+    <meta name="description" content="Rangis – construction project management app. Estimates, materials, schedules, photo documentation. For construction companies, project managers, and teams.">
+    <meta name="keywords" content="construction management, estimate app, construction materials, project management, construction app">
+    <meta name="author" content="VilcA">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/rangis/en/">
+    <link rel="alternate" hreflang="lt" href="https://www.vilca.site/apps/rangis/">
+    <link rel="alternate" hreflang="en" href="https://www.vilca.site/apps/rangis/en/">
+    <link rel="alternate" hreflang="x-default" href="https://www.vilca.site/apps/rangis/">
+    
+    <meta property="og:title" content="Rangis - Construction Management App">
+    <meta property="og:description" content="Construction project management app. Estimates, materials, schedules, photo documentation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vilca.site/apps/rangis/en/">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png">
+    <meta property="og:locale" content="en_US">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #58a6ff;
+            margin-bottom: 12px;
+        }
+        .tagline {
+            font-size: 1.3rem;
+            color: #8b949e;
+            margin-bottom: 32px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #238636, #2ea043);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(46, 160, 67, 0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #58a6ff;
+            color: #58a6ff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+        .btn-secondary:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
+        section {
+            background: #21262d;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            border: 1px solid #30363d;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #58a6ff;
+            padding-bottom: 8px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feature {
+            background: #161b22;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #58a6ff;
+        }
+        .feature h3 {
+            color: #7ee787;
+            margin-bottom: 8px;
+        }
+        .feature p {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+        .price-box {
+            text-align: center;
+            padding: 32px;
+        }
+        .price {
+            font-size: 3rem;
+            color: #7ee787;
+            font-weight: 700;
+        }
+        .price-period {
+            color: #8b949e;
+            font-size: 1.2rem;
+        }
+        .price-note {
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .target-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .target-item {
+            background: #238636;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .not-for-item {
+            background: #da3633;
+        }
+        .internal-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        .internal-links a {
+            color: #58a6ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .internal-links a:hover {
+            background: #21262d;
+        }
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: #6e7681;
+            border-top: 1px solid #21262d;
+        }
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .breadcrumb {
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #8b949e;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: #58a6ff;
+        }
+        .breadcrumb span {
+            color: #484f58;
+            margin: 0 8px;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-switch a {
+            color: #58a6ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rangis",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "iOS, Android, Web",
+        "description": "Rangis – construction project management app. Estimates, materials, schedules, photo documentation.",
+        "url": "https://www.vilca.site/apps/rangis/en/",
+        "image": "https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png",
+        "author": {
+            "@type": "Organization",
+            "name": "VilcA",
+            "url": "https://www.vilca.site"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "9.99",
+            "priceCurrency": "EUR",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="lang-switch">
+        <a href="/apps/rangis/">🇱🇹 LT</a>
+    </div>
+    
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/rangis/en/">Rangis</a>
+        </nav>
+        
+        <header>
+            <img src="/assets/assets/rangis_premium_icon_1024.png" alt="Rangis logo" class="logo">
+            <h1>Rangis</h1>
+            <p class="tagline">Construction project management app</p>
+            
+            <div class="cta-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.rangis.app" class="btn-primary">📱 Google Play</a>
+                <a href="https://apps.apple.com/app/rangis/id6752219815" class="btn-primary">🍎 App Store</a>
+                <a href="https://www.rangis.site" class="btn-secondary">🌐 Web App</a>
+            </div>
+        </header>
+        
+        <section>
+            <h2>🎯 What Problem Does Rangis Solve?</h2>
+            <p>Construction projects require careful organization – estimates, material lists, task schedules, photo documentation. <strong>Rangis</strong> brings all of this into one app: create estimates, track materials, document with photos, and generate reports for clients.</p>
+        </section>
+        
+        <section>
+            <h2>✨ Key Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>📊 Construction Estimates</h3>
+                    <p>Create professional estimates. Materials, labor, margins – everything in one place.</p>
+                </div>
+                <div class="feature">
+                    <h3>🧱 Material Tracking</h3>
+                    <p>Track material consumption in real-time. Automatic purchase list generation.</p>
+                </div>
+                <div class="feature">
+                    <h3>📋 Task Lists</h3>
+                    <p>Plan tasks, assign to workers, track progress.</p>
+                </div>
+                <div class="feature">
+                    <h3>📸 Photo Documentation</h3>
+                    <p>Before/After photos with dates. Professional reports for clients.</p>
+                </div>
+                <div class="feature">
+                    <h3>📄 Client Reports</h3>
+                    <p>Generate PDF reports with all work data – for client or authorities.</p>
+                </div>
+                <div class="feature">
+                    <h3>☁️ Cloud Sync</h3>
+                    <p>Data automatically synced between devices. Secure backups.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>💰 Pricing</h2>
+            <div class="price-box">
+                <div class="price">€9.99</div>
+                <div class="price-period">per month</div>
+                <p class="price-note">All features, unlimited workers and projects.</p>
+            </div>
+            <p style="text-align: center; margin-top: 16px;">
+                <a href="/apps/rangis/en/pricing/" style="color: #58a6ff;">More about pricing and plans →</a>
+            </p>
+        </section>
+        
+        <section>
+            <h2>👥 Who Is It For?</h2>
+            <div class="target-list">
+                <span class="target-item">✅ Construction Companies</span>
+                <span class="target-item">✅ Project Managers</span>
+                <span class="target-item">✅ Construction Teams</span>
+                <span class="target-item">✅ Individual Contractors</span>
+                <span class="target-item">✅ Interior Designers</span>
+                <span class="target-item">✅ Renovation Services</span>
+            </div>
+            
+            <h3 style="color: #da3633; margin-top: 24px; margin-bottom: 12px;">❌ Not Suitable For?</h3>
+            <div class="target-list">
+                <span class="target-item not-for-item">Large corporations with ERP</span>
+                <span class="target-item not-for-item">Non-construction businesses</span>
+            </div>
+        </section>
+        
+        <section>
+            <h2>📚 Use Cases</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/rangis/en/use-cases/estimate/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">📊 Creating Estimates</a>
+                    <p style="color: #6e7681; margin-top: 4px;">How to create a professional construction estimate</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/rangis/en/use-cases/materials/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">🧱 Material Tracking</a>
+                    <p style="color: #6e7681; margin-top: 4px;">How to track material consumption and orders</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/rangis/en/use-cases/client-report/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">📄 Client Reports</a>
+                    <p style="color: #6e7681; margin-top: 4px;">How to generate professional PDF report for client</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/rangis/en/use-cases/before-after/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">📸 Before/After Photos</a>
+                    <p style="color: #6e7681; margin-top: 4px;">How to document work progress with photos</p>
+                </li>
+                <li style="padding: 12px 0;">
+                    <a href="/apps/rangis/en/use-cases/task-list/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">📋 Task Lists</a>
+                    <p style="color: #6e7681; margin-top: 4px;">How to plan tasks and track progress</p>
+                </li>
+            </ul>
+        </section>
+        
+        <nav class="internal-links">
+            <a href="/apps/rangis/en/pricing/">💰 Pricing</a>
+            <a href="/apps/rangis/en/faq/">❓ FAQ</a>
+            <a href="/apps/rangis/en/privacy/">🔒 Privacy</a>
+            <a href="/">🏠 Home</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. All rights reserved.</p>
+        <p style="margin-top: 8px;">
+            <a href="/apps/rangis/en/privacy/">Privacy Policy</a> · 
+            <a href="/apps/fazero/en/">Fazero</a> · 
+            <a href="/">Home</a>
+        </p>
+    </footer>
+</body>
+</html>

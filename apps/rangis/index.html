@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangis – Statybos valdymo programėlė | Rangos darbų kontrolė</title>
+    <meta name="description" content="Rangis – mobili programėlė statybos projektų valdymui. Užduočių priskyrimas, medžiagų rinka, komandos koordinavimas. 9.99€/mėn. Išbandyk nemokamai!">
+    <meta name="keywords" content="statybos valdymas, rangos darbai, statybų projektai, užduočių valdymas, statybinės medžiagos, Lietuva">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/rangis/">
+    <link rel="alternate" hreflang="lt" href="https://www.vilca.site/apps/rangis/">
+    <link rel="alternate" hreflang="en" href="https://www.vilca.site/apps/rangis/en/">
+    <link rel="alternate" hreflang="x-default" href="https://www.vilca.site/apps/rangis/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rangis – Statybos valdymo programėlė">
+    <meta property="og:description" content="Efektyvus statybos projektų valdymas: užduotys, komanda, medžiagos. Viena programėlė visiems rangos darbams.">
+    <meta property="og:url" content="https://www.vilca.site/apps/rangis/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png">
+    <meta property="og:locale" content="lt_LT">
+    <meta property="og:site_name" content="VilcA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rangis – Statybos valdymo programėlė">
+    <meta name="twitter:description" content="Efektyvus statybos projektų valdymas: užduotys, komanda, medžiagos.">
+    <meta name="twitter:image" content="https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #181818 0%, #232323 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            color: #FF9800;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .tagline {
+            font-size: 1.25rem;
+            color: #ccc;
+            margin-bottom: 24px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #FF9800, #FFD700);
+            color: #181818;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 152, 0, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #FF9800;
+            padding: 16px 32px;
+            border: 2px solid #FF9800;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 152, 0, 0.1);
+        }
+        section {
+            background: #232323;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #FF9800;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FF9800;
+            padding-bottom: 8px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feature {
+            background: #2a2a2a;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #FF9800;
+        }
+        .feature h3 {
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+        .feature p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+        .price-box {
+            text-align: center;
+            padding: 32px;
+        }
+        .price {
+            font-size: 3rem;
+            color: #FFD700;
+            font-weight: 700;
+        }
+        .price-period {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+        .price-note {
+            color: #888;
+            margin-top: 8px;
+        }
+        .target-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .target-item {
+            background: #2e7d32;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .not-for-item {
+            background: #c62828;
+        }
+        nav.internal-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+        nav.internal-links a {
+            color: #FF9800;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #FF9800;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        nav.internal-links a:hover {
+            background: rgba(255, 152, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #FF9800;
+            text-decoration: none;
+        }
+        .breadcrumb {
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #888;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: #FF9800;
+        }
+        .breadcrumb span {
+            color: #666;
+            margin: 0 8px;
+        }
+    </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rangis",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "iOS, Android, Web",
+        "description": "Rangis – mobili programėlė statybos projektų valdymui. Užduočių priskyrimas, medžiagų rinka, komandos koordinavimas.",
+        "url": "https://www.vilca.site/apps/rangis/",
+        "image": "https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png",
+        "author": {
+            "@type": "Organization",
+            "name": "VilcA",
+            "url": "https://www.vilca.site"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "9.99",
+            "priceCurrency": "EUR",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "downloadUrl": [
+            "https://play.google.com/store/apps/details?id=com.rangis.app",
+            "https://apps.apple.com/app/rangis/id6752219815"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Rangis</a>
+        </nav>
+        
+        <header>
+            <img src="/assets/assets/rangis_premium_icon_1024.png" alt="Rangis logotipas" class="logo">
+            <h1>Rangis</h1>
+            <p class="tagline">Statybos projektų valdymas vienoje programėlėje</p>
+            
+            <div class="cta-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.rangis.app" class="btn-primary">📱 Atsisiųsti (Android)</a>
+                <a href="https://apps.apple.com/app/rangis/id6752219815" class="btn-primary">🍎 Atsisiųsti (iOS)</a>
+                <a href="https://www.rangis.site" class="btn-secondary">🌐 Išbandyti Web</a>
+            </div>
+        </header>
+        
+        <section>
+            <h2>🎯 Kokią problemą sprendžia Rangis?</h2>
+            <p>Statybos projektų valdymas dažnai vyksta chaotiškai: užduotys siunčiamos SMS žinutėmis, medžiagų likučiai nesekami, o progresas matomas tik atvykus į objektą. <strong>Rangis</strong> sujungia visą komandą į vieną sistemą – matysite kas ką daro, kiek liko medžiagų, ir visada turėsite aktualią projekto būseną.</p>
+        </section>
+        
+        <section>
+            <h2>✨ Pagrindinės funkcijos</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>📋 Projektų valdymas</h3>
+                    <p>Kurkite projektus, nustatykite terminus, priskirkite atsakingus asmenis. Viskas vienoje vietoje.</p>
+                </div>
+                <div class="feature">
+                    <h3>✅ Užduočių priskyrimas</h3>
+                    <p>Deleguokite užduotis komandos nariams, sekite progresą realiu laiku, žymėkite atlikimą.</p>
+                </div>
+                <div class="feature">
+                    <h3>🧱 Medžiagų rinka</h3>
+                    <p>Parduokite ar pirkite likusias statybines medžiagas. Sutaupykite pinigų ir sumažinkite atliekas.</p>
+                </div>
+                <div class="feature">
+                    <h3>💬 Integruotas chat</h3>
+                    <p>Susirašinėkite su pardavėjais ir komandos nariais tiesiogiai programėlėje.</p>
+                </div>
+                <div class="feature">
+                    <h3>📍 Navigacija į objektą</h3>
+                    <p>Integruota žemėlapių sistema – raskite objekto ar pardavėjo adresą vienu paspaudimu.</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Progreso ataskaitos</h3>
+                    <p>Generuokite ataskaitas klientams ar vadovybei. Aiškūs grafikai ir statistika.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>💰 Kaina</h2>
+            <div class="price-box">
+                <div class="price">9.99 €</div>
+                <div class="price-period">per mėnesį</div>
+                <p class="price-note">Nepriklausomai nuo komandos dydžio. Viena kaina – visa komanda.</p>
+            </div>
+            <p style="text-align: center; margin-top: 16px;">
+                <a href="/apps/rangis/pricing/" style="color: #FF9800;">Plačiau apie kainas ir planus →</a>
+            </p>
+        </section>
+        
+        <section>
+            <h2>👥 Kam skirta?</h2>
+            <div class="target-list">
+                <span class="target-item">✅ Statybos įmonėms</span>
+                <span class="target-item">✅ Rangos darbų vadovams</span>
+                <span class="target-item">✅ Projektų vadovams</span>
+                <span class="target-item">✅ Statybos brigadoms</span>
+                <span class="target-item">✅ Pavieniams meistriams</span>
+                <span class="target-item">✅ Renovacijos specialistams</span>
+            </div>
+            
+            <h3 style="color: #c62828; margin-top: 24px; margin-bottom: 12px;">❌ Kam netinka?</h3>
+            <div class="target-list">
+                <span class="target-item not-for-item">Didelėms korporacijoms su savo ERP</span>
+                <span class="target-item not-for-item">Vienkartiniams namų remontams</span>
+            </div>
+        </section>
+        
+        <section>
+            <h2>📚 Naudojimo atvejai</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 12px 0; border-bottom: 1px solid #333;">
+                    <a href="/apps/rangis/use-cases/samata/" style="color: #FFD700; text-decoration: none; font-size: 1.1rem;">📝 Sąmatų sudarymas ir sekimas</a>
+                    <p style="color: #888; margin-top: 4px;">Kaip naudoti Rangis sąmatoms valdyti</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #333;">
+                    <a href="/apps/rangis/use-cases/medziagos/" style="color: #FFD700; text-decoration: none; font-size: 1.1rem;">🧱 Medžiagų valdymas ir rinka</a>
+                    <p style="color: #888; margin-top: 4px;">Pirkite ir parduokite statybines medžiagas</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #333;">
+                    <a href="/apps/rangis/use-cases/ataskaita-klientui/" style="color: #FFD700; text-decoration: none; font-size: 1.1rem;">📊 Ataskaita klientui</a>
+                    <p style="color: #888; margin-top: 4px;">Generuokite profesionalias ataskaitas</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #333;">
+                    <a href="/apps/rangis/use-cases/foto-pries-po/" style="color: #FFD700; text-decoration: none; font-size: 1.1rem;">📸 Foto „prieš/po"</a>
+                    <p style="color: #888; margin-top: 4px;">Dokumentuokite darbų eigą nuotraukomis</p>
+                </li>
+                <li style="padding: 12px 0;">
+                    <a href="/apps/rangis/use-cases/darbu-sarasas/" style="color: #FFD700; text-decoration: none; font-size: 1.1rem;">✅ Darbų sąrašo valdymas</a>
+                    <p style="color: #888; margin-top: 4px;">Planuokite ir sekite visus darbus</p>
+                </li>
+            </ul>
+        </section>
+        
+        <nav class="internal-links">
+            <a href="/apps/rangis/pricing/">💰 Kainos</a>
+            <a href="/apps/rangis/faq/">❓ DUK</a>
+            <a href="/apps/rangis/privacy/">🔒 Privatumas</a>
+            <a href="/">🏠 Pagrindinis</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. Visos teisės saugomos.</p>
+        <p style="margin-top: 8px;">
+            <a href="/apps/rangis/privacy/">Privatumo politika</a> · 
+            <a href="/apps/fazero/">Fazero</a> · 
+            <a href="/">Pagrindinis</a>
+        </p>
+    </footer>
+</body>
+</html>

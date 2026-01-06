@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazero - Electrical Installation Testing App | VilcA</title>
+    <meta name="description" content="Fazero – electrical installation testing and protocol generation app according to IEC 60364 standard. Measurements, protocols, electronic logbook.">
+    <meta name="keywords" content="electrical testing, installation testing, electrical protocol, IEC 60364, electrical measurements">
+    <meta name="author" content="VilcA">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/fazero/en/">
+    <link rel="alternate" hreflang="lt" href="https://www.vilca.site/apps/fazero/">
+    <link rel="alternate" hreflang="en" href="https://www.vilca.site/apps/fazero/en/">
+    <link rel="alternate" hreflang="x-default" href="https://www.vilca.site/apps/fazero/">
+    
+    <meta property="og:title" content="Fazero - Electrical Installation Testing App">
+    <meta property="og:description" content="Electrical installation testing and protocol generation according to IEC 60364 standard.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vilca.site/apps/fazero/en/">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/fazero_logo.png">
+    <meta property="og:locale" content="en_US">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #58a6ff;
+            margin-bottom: 12px;
+        }
+        .tagline {
+            font-size: 1.3rem;
+            color: #8b949e;
+            margin-bottom: 32px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #238636, #2ea043);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(46, 160, 67, 0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #58a6ff;
+            color: #58a6ff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+        .btn-secondary:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
+        section {
+            background: #21262d;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            border: 1px solid #30363d;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #58a6ff;
+            padding-bottom: 8px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feature {
+            background: #161b22;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #58a6ff;
+        }
+        .feature h3 {
+            color: #7ee787;
+            margin-bottom: 8px;
+        }
+        .feature p {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+        .price-box {
+            text-align: center;
+            padding: 32px;
+        }
+        .price {
+            font-size: 3rem;
+            color: #7ee787;
+            font-weight: 700;
+        }
+        .price-period {
+            color: #8b949e;
+            font-size: 1.2rem;
+        }
+        .price-note {
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .target-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .target-item {
+            background: #238636;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .not-for-item {
+            background: #da3633;
+        }
+        .internal-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        .internal-links a {
+            color: #58a6ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .internal-links a:hover {
+            background: #21262d;
+        }
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: #6e7681;
+            border-top: 1px solid #21262d;
+        }
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .breadcrumb {
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #8b949e;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: #58a6ff;
+        }
+        .breadcrumb span {
+            color: #484f58;
+            margin: 0 8px;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-switch a {
+            color: #58a6ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Fazero",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "iOS, Android, Web",
+        "description": "Fazero – electrical installation testing and protocol generation app according to IEC 60364 standard. Measurements, protocols, electronic logbook.",
+        "url": "https://www.vilca.site/apps/fazero/en/",
+        "image": "https://www.vilca.site/assets/assets/fazero_logo.png",
+        "author": {
+            "@type": "Organization",
+            "name": "VilcA",
+            "url": "https://www.vilca.site"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "14.99",
+            "priceCurrency": "EUR",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/PreOrder",
+            "description": "Subscription with all modules"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="lang-switch">
+        <a href="/apps/fazero/">🇱🇹 LT</a>
+    </div>
+    
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/fazero/en/">Fazero</a>
+        </nav>
+        
+        <header>
+            <img src="/assets/assets/fazero_logo.png" alt="Fazero logo" class="logo">
+            <h1>Fazero</h1>
+            <p class="tagline">Electrical installation testing and protocol generation</p>
+            
+            <div class="cta-buttons">
+                <span class="btn-primary" style="opacity: 0.7; cursor: default;">📱 Coming Soon (Android)</span>
+                <span class="btn-primary" style="opacity: 0.7; cursor: default;">🍎 Coming Soon (iOS)</span>
+                <a href="/" class="btn-secondary">🏠 VilcA Portfolio</a>
+            </div>
+        </header>
+        
+        <section>
+            <h2>🎯 What Problem Does Fazero Solve?</h2>
+            <p>Electrical installation testing requires careful documentation – measurement protocols, compliance confirmations, periodic inspection schedules. <strong>Fazero</strong> automates this process: record measurements, generate PDF protocols according to IEC 60364 standard, and have all documentation in one place.</p>
+        </section>
+        
+        <section>
+            <h2>✨ Key Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>⚡ Installation Testing</h3>
+                    <p>All required tests according to IEC 60364 standard. Automatic validation.</p>
+                </div>
+                <div class="feature">
+                    <h3>📏 Measurement Recording</h3>
+                    <p>Resistance, voltage, insulation and other measurements with instrument data recording.</p>
+                </div>
+                <div class="feature">
+                    <h3>📄 Automatic Protocols</h3>
+                    <p>PDF protocol generation with all measurement data and compliance confirmation.</p>
+                </div>
+                <div class="feature">
+                    <h3>📖 Electronic Logbook</h3>
+                    <p>Complete installation history, periodic inspection schedules and document archive.</p>
+                </div>
+                <div class="feature">
+                    <h3>📶 Offline Mode</h3>
+                    <p>Work without internet connection. Data automatically syncs when connected.</p>
+                </div>
+                <div class="feature">
+                    <h3>✅ Standards Compliance</h3>
+                    <p>Automatic checking and validation according to national and international standards.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>💰 Pricing</h2>
+            <div class="price-box">
+                <div class="price">€14.99</div>
+                <div class="price-period">per month</div>
+                <p class="price-note">All modules, unlimited workers and documents.</p>
+            </div>
+            <p style="text-align: center; margin-top: 16px;">
+                <a href="/apps/fazero/en/pricing/" style="color: #58a6ff;">More about pricing and plans →</a>
+            </p>
+        </section>
+        
+        <section>
+            <h2>👥 Who Is It For?</h2>
+            <div class="target-list">
+                <span class="target-item">✅ Electricians</span>
+                <span class="target-item">✅ Electrical Engineers</span>
+                <span class="target-item">✅ Electrical Installation Companies</span>
+                <span class="target-item">✅ Facility Managers</span>
+                <span class="target-item">✅ Certification Bodies</span>
+                <span class="target-item">✅ Maintenance Companies</span>
+            </div>
+            
+            <h3 style="color: #da3633; margin-top: 24px; margin-bottom: 12px;">❌ Not Suitable For?</h3>
+            <div class="target-list">
+                <span class="target-item not-for-item">General construction (use Rangis)</span>
+                <span class="target-item not-for-item">DIY home repairs</span>
+            </div>
+        </section>
+        
+        <section>
+            <h2>📚 Use Cases</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/fazero/en/use-cases/testing/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">⚡ Installation Testing</a>
+                    <p style="color: #6e7681; margin-top: 4px;">How to perform electrical installation tests</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/fazero/en/use-cases/measurements/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">📏 Measurement Recording</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Resistance, voltage, and insulation measurements</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/fazero/en/use-cases/protocols/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">📄 Protocol Generation</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Automatic PDF protocol creation</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/fazero/en/use-cases/logbook/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">📖 Electronic Logbook</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Installation history and document archive</p>
+                </li>
+                <li style="padding: 12px 0;">
+                    <a href="/apps/fazero/en/use-cases/standards/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">✅ Standards Compliance</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Automatic checking according to IEC 60364</p>
+                </li>
+            </ul>
+        </section>
+        
+        <nav class="internal-links">
+            <a href="/apps/fazero/en/pricing/">💰 Pricing</a>
+            <a href="/apps/fazero/en/faq/">❓ FAQ</a>
+            <a href="/apps/fazero/en/privacy/">🔒 Privacy</a>
+            <a href="/">🏠 Home</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. All rights reserved.</p>
+        <p style="margin-top: 8px;">
+            <a href="/apps/fazero/en/privacy/">Privacy Policy</a> · 
+            <a href="/apps/rangis/en/">Rangis</a> · 
+            <a href="/">Home</a>
+        </p>
+    </footer>
+</body>
+</html>

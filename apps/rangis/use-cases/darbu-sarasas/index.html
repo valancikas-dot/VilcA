@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darbų sąrašo valdymas | Rangis užduočių planavimas</title>
+    <meta name="description" content="Planuokite ir sekite statybos darbus su Rangis. Užduočių priskyrimas, terminai, progresas ir komandos koordinavimas.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/rangis/use-cases/darbu-sarasas/">
+    <link rel="alternate" hreflang="lt" href="https://www.vilca.site/apps/rangis/use-cases/darbu-sarasas/">
+    
+    <meta property="og:title" content="Darbų sąrašo valdymas su Rangis">
+    <meta property="og:description" content="Efektyvus statybos užduočių planavimas ir sekimas.">
+    <meta property="og:url" content="https://www.vilca.site/apps/rangis/use-cases/darbu-sarasas/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png">
+    
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #181818 0%, #232323 100%);
+            color: #fff;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+        .breadcrumb { margin-bottom: 24px; font-size: 0.9rem; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #FF9800; }
+        .breadcrumb span { color: #666; margin: 0 8px; }
+        h1 { color: #FF9800; font-size: 2rem; margin-bottom: 16px; }
+        .intro { color: #ccc; font-size: 1.1rem; margin-bottom: 32px; }
+        .step {
+            background: #232323;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid #FF9800;
+        }
+        .step-number {
+            background: #FF9800;
+            color: #181818;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        .step h2 { color: #FFD700; font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; }
+        .step p { color: #bbb; }
+        .status-demo {
+            display: flex;
+            gap: 16px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .status {
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .status-todo { background: #424242; color: #fff; }
+        .status-progress { background: #1565c0; color: #fff; }
+        .status-done { background: #2e7d32; color: #fff; }
+        .cta {
+            background: linear-gradient(90deg, #FF9800, #FFD700);
+            color: #181818;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 24px;
+        }
+        nav.internal-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+        nav.internal-links a {
+            color: #FF9800;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #FF9800;
+            border-radius: 8px;
+        }
+        footer { text-align: center; padding: 32px; color: #666; }
+        footer a { color: #FF9800; text-decoration: none; }
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .feature-item {
+            background: #2a2a2a;
+            padding: 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .feature-item span { font-size: 1.5rem; }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Kaip valdyti darbų sąrašą su Rangis",
+        "description": "Vadovas statybos užduočių planavimui, priskyrimui ir sekimui.",
+        "image": "https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Sukurkite darbų sąrašą",
+                "text": "Projekte sukurkite visų reikalingų darbų sąrašą su terminais."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Priskirkite atsakingus",
+                "text": "Kiekvienam darbui priskirkite komandos narį."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Sekite progresą",
+                "text": "Stebėkite darbų būsenas ir gaukite pranešimus apie pokyčius."
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Rangis</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Naudojimo atvejai</a>
+            <span>›</span>
+            Darbų sąrašas
+        </nav>
+        
+        <h1>✅ Darbų sąrašo valdymas</h1>
+        <p class="intro">Planuokite visus statybos darbus, priskirkite atsakingus asmenis ir sekite progresą realiu laiku. Niekada nepamirškite svarbių užduočių.</p>
+        
+        <div class="status-demo">
+            <div class="status status-todo">📋 Laukia</div>
+            <div class="status status-progress">🔄 Vykdoma</div>
+            <div class="status status-done">✅ Atlikta</div>
+        </div>
+        
+        <h2 style="color: #FF9800; margin: 32px 0 24px;">Kaip valdyti darbus?</h2>
+        
+        <div class="step">
+            <h2><span class="step-number">1</span> Sukurkite darbų sąrašą</h2>
+            <p>Projekte pridėkite visus reikalingus darbus:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Darbo pavadinimas ir aprašymas</li>
+                <li>Pradžios ir pabaigos data</li>
+                <li>Prioritetas (žemas, vidutinis, aukštas)</li>
+                <li>Priklausomybės (kurie darbai turi būti atlikti pirma)</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">2</span> Priskirkite komandos narius</h2>
+            <p>Kiekvienam darbui priskirkite atsakingą asmenį:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Pasirinkite iš komandos narių sąrašo</li>
+                <li>Galite priskirti kelis žmones vienam darbui</li>
+                <li>Priskirtas žmogus gauna pranešimą</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">3</span> Sekite progresą</h2>
+            <p>Stebėkite darbų eigą realiu laiku:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Kanban lenta arba sąrašo vaizdas</li>
+                <li>Filtravimas pagal būseną, asmenį, datą</li>
+                <li>Automatiniai priminimai apie terminus</li>
+                <li>Push pranešimai apie pokyčius</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">4</span> Pridėkite komentarus ir failus</h2>
+            <p>Prie kiekvieno darbo galite pridėti:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Komentarus ir klausimus</li>
+                <li>Nuotraukas ir dokumentus</li>
+                <li>Checklist'us (sub-užduotis)</li>
+            </ul>
+        </div>
+        
+        <h2 style="color: #FF9800; margin: 32px 0 24px;">Ką galite daryti?</h2>
+        
+        <div class="features-list">
+            <div class="feature-item">
+                <span>📱</span>
+                <div>Atnaujinti būseną iš objekto</div>
+            </div>
+            <div class="feature-item">
+                <span>🔔</span>
+                <div>Gauti pranešimus apie terminus</div>
+            </div>
+            <div class="feature-item">
+                <span>📊</span>
+                <div>Matyti bendrą progresą</div>
+            </div>
+            <div class="feature-item">
+                <span>🔄</span>
+                <div>Perkelti terminus lengvai</div>
+            </div>
+            <div class="feature-item">
+                <span>👥</span>
+                <div>Matyti kas ką daro</div>
+            </div>
+            <div class="feature-item">
+                <span>📅</span>
+                <div>Kalendoriaus vaizdas</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px;">
+            <a href="#TODO-DOWNLOAD" class="cta">📱 Pradėti planuoti darbus</a>
+        </div>
+        
+        <nav class="internal-links">
+            <a href="/apps/rangis/use-cases/foto-pries-po/">← Foto prieš/po</a>
+            <a href="/apps/rangis/">Rangis</a>
+            <a href="/apps/rangis/use-cases/samata/">Sąmatos →</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. Visos teisės saugomos.</p>
+        <p><a href="/">Pagrindinis</a> · <a href="/apps/rangis/faq/">DUK</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Robots.txt for www.vilca.site
+# Last updated: 2026-01-06
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.vilca.site/sitemap.xml

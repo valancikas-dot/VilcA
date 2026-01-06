@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sąmatų sudarymas Rangis programėlėje | Statybos sąmatos</title>
+    <meta name="description" content="Kaip sudaryti ir sekti statybos sąmatas su Rangis. Žingsnis po žingsnio vadovas sąmatų valdymui.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/rangis/use-cases/samata/">
+    <link rel="alternate" hreflang="lt" href="https://www.vilca.site/apps/rangis/use-cases/samata/">
+    
+    <meta property="og:title" content="Sąmatų sudarymas su Rangis">
+    <meta property="og:description" content="Išmokite valdyti statybos sąmatas efektyviai su Rangis programėle.">
+    <meta property="og:url" content="https://www.vilca.site/apps/rangis/use-cases/samata/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png">
+    
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #181818 0%, #232323 100%);
+            color: #fff;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+        .breadcrumb { margin-bottom: 24px; font-size: 0.9rem; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #FF9800; }
+        .breadcrumb span { color: #666; margin: 0 8px; }
+        h1 { color: #FF9800; font-size: 2rem; margin-bottom: 16px; }
+        .intro { color: #ccc; font-size: 1.1rem; margin-bottom: 32px; }
+        .step {
+            background: #232323;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid #FF9800;
+        }
+        .step-number {
+            background: #FF9800;
+            color: #181818;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        .step h2 { color: #FFD700; font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; }
+        .step p { color: #bbb; }
+        .tip {
+            background: #1b5e20;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .tip strong { color: #4CAF50; }
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .benefit {
+            background: #2a2a2a;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .benefit-icon { font-size: 2rem; margin-bottom: 8px; }
+        .cta {
+            background: linear-gradient(90deg, #FF9800, #FFD700);
+            color: #181818;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 24px;
+        }
+        nav.internal-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+        nav.internal-links a {
+            color: #FF9800;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #FF9800;
+            border-radius: 8px;
+        }
+        footer { text-align: center; padding: 32px; color: #666; }
+        footer a { color: #FF9800; text-decoration: none; }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Kaip sudaryti sąmatą su Rangis",
+        "description": "Žingsnis po žingsnio vadovas statybos sąmatos sudarymui ir sekimui naudojant Rangis programėlę.",
+        "image": "https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png",
+        "totalTime": "PT10M",
+        "tool": {
+            "@type": "HowToTool",
+            "name": "Rangis programėlė"
+        },
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Sukurkite naują projektą",
+                "text": "Atidarykite Rangis ir paspauskite 'Naujas projektas'. Įveskite projekto pavadinimą ir adresą."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Pridėkite darbus",
+                "text": "Sukurkite darbų sąrašą su kiekiais ir kainomis. Galite naudoti šablonus arba kurti nuo nulio."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Priskirkite medžiagas",
+                "text": "Prie kiekvieno darbo pridėkite reikalingas medžiagas. Sistema automatiškai skaičiuos bendrą kainą."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Generuokite sąmatą",
+                "text": "Paspauskite 'Eksportuoti sąmatą' ir gaukite PDF dokumentą klientui."
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Rangis</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Naudojimo atvejai</a>
+            <span>›</span>
+            Sąmatos
+        </nav>
+        
+        <h1>📝 Sąmatų sudarymas su Rangis</h1>
+        <p class="intro">Išmokite greitai ir tiksliai sudaryti statybos sąmatas, sekti išlaidas ir generuoti profesionalius dokumentus klientams.</p>
+        
+        <div class="benefits">
+            <div class="benefit">
+                <div class="benefit-icon">⏱️</div>
+                <strong>70% greičiau</strong>
+                <p style="color: #888; font-size: 0.9rem;">nei rankiniu būdu</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">📊</div>
+                <strong>Tikslūs skaičiavimai</strong>
+                <p style="color: #888; font-size: 0.9rem;">automatinės formulės</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">📱</div>
+                <strong>Visada po ranka</strong>
+                <p style="color: #888; font-size: 0.9rem;">telefone ir kompiuteryje</p>
+            </div>
+        </div>
+        
+        <h2 style="color: #FF9800; margin: 32px 0 24px;">Kaip tai padaryti?</h2>
+        
+        <div class="step">
+            <h2><span class="step-number">1</span> Sukurkite naują projektą</h2>
+            <p>Atidarykite Rangis ir paspauskite <strong>„Naujas projektas"</strong>. Įveskite:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Projekto pavadinimą (pvz., „Butų renovacija Vilniuje")</li>
+                <li>Kliento vardą ir kontaktus</li>
+                <li>Objekto adresą</li>
+                <li>Planuojamą pradžios ir pabaigos datą</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">2</span> Pridėkite darbus</h2>
+            <p>Sukurkite darbų sąrašą. Kiekvienam darbui nurodykite:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Darbo pavadinimą (pvz., „Sienų tinkavimas")</li>
+                <li>Matavimo vienetą (m², vnt., val.)</li>
+                <li>Kiekį ir kainą už vienetą</li>
+            </ul>
+            <p style="margin-top: 12px;"><strong>Patarimas:</strong> Naudokite šablonus tipiniams darbams – sutaupysite laiko!</p>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">3</span> Priskirkite medžiagas</h2>
+            <p>Prie kiekvieno darbo pridėkite reikalingas medžiagas. Sistema automatiškai:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Skaičiuoja bendrą medžiagų kainą</li>
+                <li>Rodo, kiek medžiagų reikės visam projektui</li>
+                <li>Įspėja apie trūkstamas medžiagas</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">4</span> Generuokite sąmatą</h2>
+            <p>Paspauskite <strong>„Eksportuoti sąmatą"</strong> ir pasirinkite formatą:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li><strong>PDF</strong> – profesionalus dokumentas klientui</li>
+                <li><strong>Excel</strong> – detali lentelė tolimesniam darbui</li>
+                <li><strong>Nuoroda</strong> – interaktyvi sąmata, kurią klientas gali peržiūrėti online</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <strong>💡 Pro patarimas:</strong> Sukurkite šablonus dažniausiai atliekamiems darbams (pvz., „Vonios remontas", „Grindų klojimas"). Kitą kartą sąmatą sudarysite per 5 minutes!
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px;">
+            <!-- TODO: Pridėti tikrą atsisiuntimo nuorodą -->
+            <a href="#TODO-DOWNLOAD" class="cta">📱 Išbandyti Rangis nemokamai</a>
+        </div>
+        
+        <nav class="internal-links">
+            <a href="/apps/rangis/">← Grįžti į Rangis</a>
+            <a href="/apps/rangis/use-cases/medziagos/">Medžiagų valdymas →</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. Visos teisės saugomos.</p>
+        <p><a href="/">Pagrindinis</a> · <a href="/apps/rangis/faq/">DUK</a></p>
+    </footer>
+</body>
+</html>
