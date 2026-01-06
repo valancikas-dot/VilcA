@@ -1,0 +1,165 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.vilca.site/#organization",
+      "name": "VilcA Studio",
+      "url": "https://www.vilca.site",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.vilca.site/icons/Icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "VilcA Studio develops professional mobile applications for construction and electrical industries.",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Aleksandras Vilcinskas"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "LT"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "vilcastudioapp@google.com",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://play.google.com/store/apps/developer?id=VilcA+Studio",
+        "https://apps.apple.com/developer/id1234567890"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.vilca.site/#website",
+      "url": "https://www.vilca.site",
+      "name": "VilcA Studio",
+      "publisher": {
+        "@id": "https://www.vilca.site/#organization"
+      },
+      "inLanguage": ["lt", "en"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.vilca.site/apps/rangis/#app",
+      "name": "Rangis",
+      "alternateName": ["Rangis App", "Rangis Construction Manager"],
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Construction Management",
+      "operatingSystem": ["iOS 14.0 or later", "Android 8.0 or later"],
+      "description": "Rangis is a mobile application for construction project management. Create estimates, track materials, document work progress with photos, and generate professional client reports.",
+      "url": "https://www.vilca.site/apps/rangis/",
+      "image": "https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png",
+      "screenshot": [
+        "https://www.vilca.site/assets/assets/rangis_screenshot_1.png",
+        "https://www.vilca.site/assets/assets/rangis_screenshot_2.png"
+      ],
+      "author": {
+        "@id": "https://www.vilca.site/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.vilca.site/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "EUR",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://www.vilca.site/#organization"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "downloadUrl": [
+        "https://play.google.com/store/apps/details?id=com.rangis.app",
+        "https://apps.apple.com/app/rangis/id6752219815"
+      ],
+      "installUrl": [
+        "https://play.google.com/store/apps/details?id=com.rangis.app",
+        "https://apps.apple.com/app/rangis/id6752219815"
+      ],
+      "softwareVersion": "2.0",
+      "datePublished": "2024-06-01",
+      "dateModified": "2026-01-06",
+      "inLanguage": ["lt", "en"],
+      "isAccessibleForFree": false,
+      "featureList": [
+        "Construction estimate creation",
+        "Material tracking and inventory",
+        "Before/after photo documentation",
+        "Client report generation (PDF)",
+        "Task management and scheduling",
+        "Offline functionality",
+        "Cloud sync"
+      ],
+      "keywords": "construction management, contractor app, building project, estimate calculator, material tracking, renovation app, statybos valdymas, rangos darbai",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Construction professionals",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Lithuania"
+        }
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.vilca.site/apps/fazero/#app",
+      "name": "Fazero",
+      "alternateName": ["Fazero App", "Fazero Electrical Testing"],
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Electrical Testing",
+      "operatingSystem": ["iOS", "Android"],
+      "description": "Fazero is a mobile application for electrical installation testing and protocol generation. Compliant with LST HD 60364 standard. Create measurement reports, generate PDF protocols with digital signatures.",
+      "url": "https://www.vilca.site/apps/fazero/",
+      "image": "https://www.vilca.site/assets/assets/fazero_logo.png",
+      "author": {
+        "@id": "https://www.vilca.site/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.vilca.site/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "14.99",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/PreOrder",
+        "seller": {
+          "@id": "https://www.vilca.site/#organization"
+        }
+      },
+      "softwareVersion": "1.0",
+      "releaseNotes": "Coming soon",
+      "inLanguage": ["lt", "en"],
+      "isAccessibleForFree": false,
+      "featureList": [
+        "Electrical installation testing",
+        "LST HD 60364 compliance",
+        "Insulation resistance measurement",
+        "Grounding resistance testing",
+        "Protocol generation (PDF)",
+        "Digital signatures",
+        "Work logbook"
+      ],
+      "keywords": "electrical testing, electrician app, protocol generator, LST HD 60364, insulation resistance, grounding test, elektros bandymai, protokolai",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Electricians and electrical inspectors",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Lithuania"
+        }
+      }
+    }
+  ]
+}

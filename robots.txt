@@ -7,7 +7,19 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.vilca.site/sitemap.xml
 
-# LLM/AI information files
-# See https://llmstxt.org/ for specification
+# LLM/AI discovery files (https://llmstxt.org/)
 # llms.txt - Summary for AI assistants
 # llms-full.txt - Detailed information for AI
+
+# Structured data
+# schema.jsonld - Organization and app schema
+
+# IndexNow key for Bing/Yandex
+# Key file: d684b74f80bf70914ed94b4e1cd3ece9.txt
+
+# Other files
+# humans.txt - Team information
+# .well-known/security.txt - Security contact
+# .well-known/ai-plugin.json - ChatGPT plugin manifest
+# .well-known/assetlinks.json - Android App Links
+# .well-known/apple-app-site-association - iOS Universal Links

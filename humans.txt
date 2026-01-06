@@ -1,0 +1,22 @@
+/* TEAM */
+Developer: VilcA Studio
+Contact: vilcastudioapp@google.com
+Location: Lithuania
+
+/* SITE */
+Last update: 2026-01-06
+Language: Lithuanian, English
+Standards: HTML5, CSS3, Schema.org
+
+/* APPS */
+Rangis: Construction management app
+- Google Play: https://play.google.com/store/apps/details?id=com.rangis.app
+- App Store: https://apps.apple.com/app/rangis/id6752219815
+- Website: https://www.rangis.site
+
+Fazero: Electrical testing app (Coming soon)
+- Standard: LST HD 60364
+
+/* THANKS */
+Built with Flutter
+Hosted on GitHub Pages
