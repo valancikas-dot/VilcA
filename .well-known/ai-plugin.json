@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "VilcA Studio Apps",
+  "name_for_model": "vilca_studio",
+  "description_for_human": "Construction and electrical testing mobile apps for professionals in Lithuania and Europe.",
+  "description_for_model": "VilcA Studio provides mobile applications for construction and electrical industries. Rangis is a construction management app for contractors with features for estimates, materials tracking, photo documentation, and client reports (€9.99/month, available on iOS and Android). Fazero is an electrical installation testing app for electricians with protocol generation compliant with LST HD 60364 standard (€14.99/month, coming soon). Both apps are available in Lithuanian and English.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://www.vilca.site/openapi.yaml"
+  },
+  "logo_url": "https://www.vilca.site/icons/Icon-512.png",
+  "contact_email": "vilcastudioapp@google.com",
+  "legal_info_url": "https://www.vilca.site/apps/rangis/privacy/index.html"
+}

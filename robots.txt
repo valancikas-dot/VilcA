@@ -6,3 +6,8 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://www.vilca.site/sitemap.xml
+
+# LLM/AI information files
+# See https://llmstxt.org/ for specification
+# llms.txt - Summary for AI assistants
+# llms-full.txt - Detailed information for AI
