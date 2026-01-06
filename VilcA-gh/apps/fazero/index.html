@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazero – Elektros instaliacijų testavimas | Protokolų generavimas</title>
+    <meta name="description" content="Fazero – elektros instaliacijų bandymai ir protokolų generavimas. Matavimai, PDF protokolai, LST HD 60364 standartas. Elektrikams ir inžinieriams.">
+    <meta name="keywords" content="elektros instaliacija, bandymai, protokolai, matavimai, LST HD 60364, IEC 60364, elektrikas, Lietuva">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/fazero/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fazero – Elektros instaliacijų testavimo programėlė">
+    <meta property="og:description" content="Elektros instaliacijų bandymai ir automatinis protokolų generavimas. Skirta elektrikams ir inžinieriams.">
+    <meta property="og:url" content="https://www.vilca.site/apps/fazero/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/fazero_logo.png">
+    <meta property="og:locale" content="lt_LT">
+    <meta property="og:site_name" content="VilcA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fazero – Elektros instaliacijų testavimas">
+    <meta name="twitter:description" content="Elektros bandymai ir protokolų generavimas. Skirta elektrikams.">
+    <meta name="twitter:image" content="https://www.vilca.site/assets/assets/fazero_logo.png">
+    
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 24px;
+            border-radius: 24px;
+        }
+        h1 {
+            color: #58a6ff;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .tagline {
+            font-size: 1.25rem;
+            color: #8b949e;
+            margin-bottom: 24px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #238636, #2ea043);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(35, 134, 54, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #58a6ff;
+            padding: 16px 32px;
+            border: 2px solid #58a6ff;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+        .btn-secondary:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
+        section {
+            background: #21262d;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            border: 1px solid #30363d;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #58a6ff;
+            padding-bottom: 8px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feature {
+            background: #161b22;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #58a6ff;
+        }
+        .feature h3 {
+            color: #7ee787;
+            margin-bottom: 8px;
+        }
+        .feature p {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+        .price-box {
+            text-align: center;
+            padding: 32px;
+        }
+        .price {
+            font-size: 3rem;
+            color: #7ee787;
+            font-weight: 700;
+        }
+        .price-period {
+            color: #8b949e;
+            font-size: 1.2rem;
+        }
+        .price-note {
+            color: #6e7681;
+            margin-top: 8px;
+        }
+        .target-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .target-item {
+            background: #238636;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .not-for-item {
+            background: #da3633;
+        }
+        nav.internal-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+        nav.internal-links a {
+            color: #58a6ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #58a6ff;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        nav.internal-links a:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: #6e7681;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .breadcrumb {
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        .breadcrumb a {
+            color: #6e7681;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: #58a6ff;
+        }
+        .breadcrumb span {
+            color: #484f58;
+            margin: 0 8px;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Fazero",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "iOS, Android, Web",
+        "description": "Fazero – elektros instaliacijų bandymai ir protokolų generavimas pagal LST HD 60364 standartą. Matavimai, protokolai, elektroninis žurnalas.",
+        "url": "https://www.vilca.site/apps/fazero/",
+        "image": "https://www.vilca.site/assets/assets/fazero_logo.png",
+        "author": {
+            "@type": "Organization",
+            "name": "VilcA",
+            "url": "https://www.vilca.site"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "14.99",
+            "priceCurrency": "EUR",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/PreOrder",
+            "description": "Prenumerata su visais moduliais"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/fazero/">Fazero</a>
+        </nav>
+        
+        <header>
+            <img src="/assets/assets/fazero_logo.png" alt="Fazero logotipas" class="logo">
+            <h1>Fazero</h1>
+            <p class="tagline">Elektros instaliacijų bandymai ir protokolų generavimas</p>
+            
+            <div class="cta-buttons">
+                <span class="btn-primary" style="opacity: 0.7; cursor: default;">📱 Jau greitai (Android)</span>
+                <span class="btn-primary" style="opacity: 0.7; cursor: default;">🍎 Jau greitai (iOS)</span>
+                <a href="/" class="btn-secondary">� VilcA Portfolio</a>
+            </div>
+        </header>
+        
+        <section>
+            <h2>🎯 Kokią problemą sprendžia Fazero?</h2>
+            <p>Elektros instaliacijų bandymai reikalauja kruopštaus dokumentavimo – matavimų protokolai, atitikties patvirtinimai, periodinių patikrų grafikai. <strong>Fazero</strong> automatizuoja šį procesą: registruokite matavimus, generuokite PDF protokolus pagal LST HD 60364 standartą ir turėkite visą dokumentaciją vienoje vietoje.</p>
+        </section>
+        
+        <section>
+            <h2>✨ Pagrindinės funkcijos</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>⚡ Instaliacijų bandymai</h3>
+                    <p>Visos būtinos patikros pagal LST HD 60364 standartą. Automatinis validavimas.</p>
+                </div>
+                <div class="feature">
+                    <h3>📏 Matavimų registravimas</h3>
+                    <p>Varžų, įtampų, izoliacijos ir kiti matavimai su prietaisų duomenų įrašymu.</p>
+                </div>
+                <div class="feature">
+                    <h3>� Automatiniai protokolai</h3>
+                    <p>PDF protokolų generavimas su visais matavimų duomenimis ir atitikties patvirtinimu.</p>
+                </div>
+                <div class="feature">
+                    <h3>� Elektroninis žurnalas</h3>
+                    <p>Visa instaliacijos istorija, periodinių patikrų grafikai ir dokumentų archyvas.</p>
+                </div>
+                <div class="feature">
+                    <h3>� Offline darbas</h3>
+                    <p>Dirbkite be interneto ryšio. Duomenys automatiškai sinchronizuojasi prisijungus.</p>
+                </div>
+                <div class="feature">
+                    <h3>✅ Norminė atitiktis</h3>
+                    <p>Automatinis tikrinimas ir validavimas pagal Lietuvos bei tarptautinius standartus.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>💰 Kaina</h2>
+            <div class="price-box">
+                <div class="price">14.99 €</div>
+                <div class="price-period">per mėnesį</div>
+                <p class="price-note">Visi moduliai, neriboti darbuotojai ir dokumentai.</p>
+            </div>
+            <p style="text-align: center; margin-top: 16px;">
+                <a href="/apps/fazero/pricing/" style="color: #58a6ff;">Plačiau apie kainas ir planus →</a>
+            </p>
+        </section>
+        
+        <section>
+            <h2>👥 Kam skirta?</h2>
+            <div class="target-list">
+                <span class="target-item">✅ Elektrikams</span>
+                <span class="target-item">✅ Elektros inžinieriams</span>
+                <span class="target-item">✅ Elektros instaliacijos įmonėms</span>
+                <span class="target-item">✅ Elektros ūkio atsakingiems</span>
+                <span class="target-item">✅ Sertifikuotojams</span>
+                <span class="target-item">✅ Techninės priežiūros įmonėms</span>
+            </div>
+            
+            <h3 style="color: #da3633; margin-top: 24px; margin-bottom: 12px;">❌ Kam netinka?</h3>
+            <div class="target-list">
+                <span class="target-item not-for-item">Bendroms statyboms (naudokite Rangis)</span>
+                <span class="target-item not-for-item">Mėgėjiškiems remontams</span>
+            </div>
+        </section>
+        
+        <section>
+            <h2>📚 Naudojimo atvejai</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/fazero/use-cases/bandymai/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">⚡ Instaliacijų bandymai</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Kaip atlikti elektros instaliacijos bandymus</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/fazero/use-cases/matavimai/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">� Matavimų registravimas</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Varžų, įtampų ir izoliacijos matavimai</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/fazero/use-cases/protokolai/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">� Protokolų generavimas</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Automatinis PDF protokolų kūrimas</p>
+                </li>
+                <li style="padding: 12px 0; border-bottom: 1px solid #30363d;">
+                    <a href="/apps/fazero/use-cases/zurnalas/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">� Elektroninis žurnalas</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Instaliacijos istorija ir dokumentų archyvas</p>
+                </li>
+                <li style="padding: 12px 0;">
+                    <a href="/apps/fazero/use-cases/standartai/" style="color: #7ee787; text-decoration: none; font-size: 1.1rem;">✅ Norminė atitiktis</a>
+                    <p style="color: #6e7681; margin-top: 4px;">Automatinis tikrinimas pagal LST HD 60364</p>
+                </li>
+            </ul>
+        </section>
+        
+        <nav class="internal-links">
+            <a href="/apps/fazero/pricing/">💰 Kainos</a>
+            <a href="/apps/fazero/faq/">❓ DUK</a>
+            <a href="/apps/fazero/privacy/">🔒 Privatumas</a>
+            <a href="/">🏠 Pagrindinis</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. Visos teisės saugomos.</p>
+        <p style="margin-top: 8px;">
+            <a href="/apps/fazero/privacy/">Privatumo politika</a> · 
+            <a href="/apps/rangis/">Rangis</a> · 
+            <a href="/">Pagrindinis</a>
+        </p>
+    </footer>
+</body>
+</html>

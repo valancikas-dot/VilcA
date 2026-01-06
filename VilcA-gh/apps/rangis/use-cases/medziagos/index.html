@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medžiagų valdymas ir rinka | Rangis programėlė</title>
+    <meta name="description" content="Valdykite statybines medžiagas, sekite likučius ir pirkite/parduokite likusias medžiagas Rangis rinkoje.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/rangis/use-cases/medziagos/">
+    
+    <meta property="og:title" content="Medžiagų valdymas su Rangis">
+    <meta property="og:description" content="Statybinių medžiagų rinka ir valdymas vienoje vietoje.">
+    <meta property="og:url" content="https://www.vilca.site/apps/rangis/use-cases/medziagos/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png">
+    
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #181818 0%, #232323 100%);
+            color: #fff;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+        .breadcrumb { margin-bottom: 24px; font-size: 0.9rem; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #FF9800; }
+        .breadcrumb span { color: #666; margin: 0 8px; }
+        h1 { color: #FF9800; font-size: 2rem; margin-bottom: 16px; }
+        .intro { color: #ccc; font-size: 1.1rem; margin-bottom: 32px; }
+        .step {
+            background: #232323;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid #FF9800;
+        }
+        .step-number {
+            background: #FF9800;
+            color: #181818;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        .step h2 { color: #FFD700; font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; }
+        .step p { color: #bbb; }
+        .feature-box {
+            background: #2a2a2a;
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        .feature-box h3 { color: #4CAF50; margin-bottom: 12px; }
+        .cta {
+            background: linear-gradient(90deg, #FF9800, #FFD700);
+            color: #181818;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 24px;
+        }
+        nav.internal-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+        nav.internal-links a {
+            color: #FF9800;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #FF9800;
+            border-radius: 8px;
+        }
+        footer { text-align: center; padding: 32px; color: #666; }
+        footer a { color: #FF9800; text-decoration: none; }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Kaip valdyti medžiagas ir naudoti rinką su Rangis",
+        "description": "Vadovas statybinių medžiagų valdymui, likučių sekimui ir pirkimui/pardavimui Rangis rinkoje.",
+        "image": "https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Pridėkite medžiagas prie projekto",
+                "text": "Projekte sukurkite medžiagų sąrašą su kiekiais ir kainomis."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Sekite sunaudojimą",
+                "text": "Žymėkite sunaudotas medžiagas – sistema automatiškai atnaujina likučius."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Parduokite likučius rinkoje",
+                "text": "Likusias medžiagas galite įdėti į rinką ir parduoti kitiems statybininkams."
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Rangis</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Naudojimo atvejai</a>
+            <span>›</span>
+            Medžiagos
+        </nav>
+        
+        <h1>🧱 Medžiagų valdymas ir rinka</h1>
+        <p class="intro">Valdykite statybines medžiagas, sekite likučius ir sumažinkite atliekas parduodant ar pirkdami likusias medžiagas Rangis rinkoje.</p>
+        
+        <div class="feature-box">
+            <h3>🌱 Problema, kurią sprendžiame</h3>
+            <p style="color: #bbb;">Po kiekvieno projekto lieka medžiagų: plytelių, klijų, profiliukų. Dažniausiai jos guli sandėlyje arba išmetamos. Rangis leidžia jas <strong>parduoti kitiems statybininkams</strong> – jūs uždirbate, kiti sutaupo.</p>
+        </div>
+        
+        <h2 style="color: #FF9800; margin: 32px 0 24px;">Kaip tai veikia?</h2>
+        
+        <div class="step">
+            <h2><span class="step-number">1</span> Pridėkite medžiagas prie projekto</h2>
+            <p>Projekte sukurkite medžiagų sąrašą:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Medžiagos pavadinimas ir aprašymas</li>
+                <li>Kiekis ir matavimo vienetas</li>
+                <li>Pirkimo kaina ir tiekėjas</li>
+                <li>Nuotrauka (neprivaloma)</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">2</span> Sekite sunaudojimą</h2>
+            <p>Darbų eigoje žymėkite sunaudotas medžiagas:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Automatinis likučių skaičiavimas</li>
+                <li>Pranešimai, kai medžiagos baigiasi</li>
+                <li>Išlaidų ataskaitos pagal medžiagas</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">3</span> Parduokite likučius rinkoje</h2>
+            <p>Baigę projektą, vienu paspaudimu įdėkite likusias medžiagas į rinką:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Nustatykite kainą (sistema siūlys pagal rinkos vidurkį)</li>
+                <li>Pridėkite nuotrauką ir aprašymą</li>
+                <li>Nurodykite atsiėmimo vietą</li>
+                <li>Laukite pirkėjų žinučių!</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">4</span> Pirkite pigesnes medžiagas</h2>
+            <p>Pradėdami naują projektą, patikrinkite rinką:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Filtruokite pagal kategoriją ir vietą</li>
+                <li>Susisiekite su pardavėju per integruotą chat</li>
+                <li>Gaukite maršrutą vienu paspaudimu</li>
+                <li>Sutaupykite iki 50% palyginti su parduotuve</li>
+            </ul>
+        </div>
+        
+        <div class="feature-box" style="background: #1b5e20;">
+            <h3>💰 Kiek galima sutaupyti?</h3>
+            <p style="color: #fff;">Vidutiniškai mūsų vartotojai sutaupo <strong>200-500€ per projektą</strong> pirkdami medžiagas iš kitų statybininkų, o likusias parduodami užuot išmetę.</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px;">
+            <a href="#TODO-DOWNLOAD" class="cta">📱 Išbandyti medžiagų rinką</a>
+        </div>
+        
+        <nav class="internal-links">
+            <a href="/apps/rangis/use-cases/samata/">← Sąmatos</a>
+            <a href="/apps/rangis/">Rangis</a>
+            <a href="/apps/rangis/use-cases/ataskaita-klientui/">Ataskaitos →</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. Visos teisės saugomos.</p>
+        <p><a href="/">Pagrindinis</a> · <a href="/apps/rangis/faq/">DUK</a></p>
+    </footer>
+</body>
+</html>

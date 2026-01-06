@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektros matavimų registravimas su Fazero | Varžos, įtampos</title>
+    <meta name="description" content="Kaip registruoti elektros matavimus su Fazero: izoliacijos varža, įžeminimas, įtampos. Prietaisų duomenų įrašymas ir istorija.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/fazero/use-cases/matavimai/">
+    
+    <meta property="og:title" content="Elektros matavimų registravimas su Fazero">
+    <meta property="og:description" content="Registruokite varžų, įtampų ir izoliacijos matavimus vienoje programėlėje.">
+    <meta property="og:url" content="https://www.vilca.site/apps/fazero/use-cases/matavimai/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/fazero_logo.png">
+    
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: #fff;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+        .breadcrumb { margin-bottom: 24px; font-size: 0.9rem; }
+        .breadcrumb a { color: #6e7681; text-decoration: none; }
+        .breadcrumb a:hover { color: #58a6ff; }
+        .breadcrumb span { color: #484f58; margin: 0 8px; }
+        h1 { color: #58a6ff; font-size: 2rem; margin-bottom: 16px; }
+        .intro { color: #8b949e; font-size: 1.1rem; margin-bottom: 32px; }
+        .step {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid #58a6ff;
+        }
+        .step-number {
+            background: #58a6ff;
+            color: #0d1117;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        .step h2 { color: #7ee787; font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; }
+        .step p { color: #8b949e; }
+        .measurement-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .measurement-type {
+            background: #21262d;
+            border: 1px solid #30363d;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .measurement-type h3 { color: #7ee787; margin-bottom: 8px; }
+        .measurement-type p { color: #8b949e; font-size: 0.9rem; }
+        nav.internal-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+        nav.internal-links a {
+            color: #58a6ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #58a6ff;
+            border-radius: 8px;
+        }
+        footer { text-align: center; padding: 32px; color: #6e7681; }
+        footer a { color: #58a6ff; text-decoration: none; }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Kaip registruoti elektros matavimus su Fazero",
+        "description": "Vadovas elektros matavimų registravimui ir prietaisų duomenų įrašymui.",
+        "image": "https://www.vilca.site/assets/assets/fazero_logo.png",
+        "totalTime": "PT15M",
+        "tool": {
+            "@type": "HowToTool",
+            "name": "Fazero programėlė"
+        },
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Pasirinkite objektą",
+                "text": "Atidarykite objektą, kuriame atliksite matavimus."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Pridėkite prietaiso duomenis",
+                "text": "Įveskite matavimo prietaiso modelį ir kalibravimo datą."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Atlikite matavimą",
+                "text": "Pasirinkite matavimo tipą ir įveskite gautus rodmenis."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Išsaugokite rezultatą",
+                "text": "Fazero automatiškai išsaugo matavimą su laiko žyma ir vieta."
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/fazero/">Fazero</a>
+            <span>›</span>
+            <a href="/apps/fazero/">Naudojimo atvejai</a>
+            <span>›</span>
+            Matavimai
+        </nav>
+        
+        <h1>📏 Matavimų registravimas</h1>
+        <p class="intro">Registruokite visus elektros instaliacijos matavimus vienoje vietoje. Fazero automatiškai saugo prietaisų duomenis, kalibravimo informaciją ir matavimų istoriją.</p>
+        
+        <h2 style="color: #58a6ff; margin-bottom: 16px;">Palaikomi matavimų tipai</h2>
+        <div class="measurement-types">
+            <div class="measurement-type">
+                <h3>🔌 Izoliacijos varža</h3>
+                <p>Matavimas MΩ, automatinis atitikties tikrinimas pagal laidininko skerspjūvį.</p>
+            </div>
+            <div class="measurement-type">
+                <h3>⚡ Įžeminimo varža</h3>
+                <p>Matavimas Ω, palyginimas su leistinomis ribomis pagal sistemos tipą.</p>
+            </div>
+            <div class="measurement-type">
+                <h3>🔗 Laidininko tęstinumas</h3>
+                <p>Apsauginio laidininko varžos matavimas ir tikrinimas.</p>
+            </div>
+            <div class="measurement-type">
+                <h3>⏱️ Atjungimo laikas</h3>
+                <p>Automatinio atjungimo laiko matavimas ms, atitiktis saugos reikalavimams.</p>
+            </div>
+            <div class="measurement-type">
+                <h3>📊 Įtampos matavimai</h3>
+                <p>Fazinė ir linijinė įtampa, įtampos kritimas.</p>
+            </div>
+            <div class="measurement-type">
+                <h3>🔄 Fazių seka</h3>
+                <p>Teisingos fazių sekos tikrinimas trifazėse sistemose.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">1</span> Pasirinkite objektą</h2>
+            <p>Atidarykite esamą objektą arba sukurkite naują. Kiekvienas matavimas bus susietas su konkrečiu objektu ir vieta.</p>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">2</span> Pridėkite prietaiso duomenis</h2>
+            <p>Įveskite matavimo prietaiso modelį, serijos numerį ir paskutinio kalibravimo datą. Fazero įspės, jei kalibravimas pasibaigęs.</p>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">3</span> Atlikite ir įrašykite matavimą</h2>
+            <p>Pasirinkite matavimo tipą, įveskite matavimo vietą (pvz., „1 aukšto skydas, grandinė Nr. 3") ir užfiksuokite rodmenis.</p>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">4</span> Peržiūrėkite rezultatus</h2>
+            <p>Fazero automatiškai patikrina atitiktį ir rodo aiškų rezultatą: ✅ Atitinka arba ❌ Neatitinka su paaiškinimais.</p>
+        </div>
+        
+        <nav class="internal-links">
+            <a href="/apps/fazero/">← Grįžti į Fazero</a>
+            <a href="/apps/fazero/use-cases/bandymai/">⚡ Bandymai</a>
+            <a href="/apps/fazero/use-cases/protokolai/">📄 Protokolai</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. Visos teisės saugomos.</p>
+        <p><a href="/">Pagrindinis</a> · <a href="/apps/rangis/">Rangis</a></p>
+    </footer>
+</body>
+</html>

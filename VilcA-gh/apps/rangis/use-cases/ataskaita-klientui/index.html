@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ataskaita klientui | Rangis statybos ataskaitos</title>
+    <meta name="description" content="Generuokite profesionalias statybos progreso ataskaitas klientams. PDF ir interaktyvūs formatai su Rangis.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vilca.site/apps/rangis/use-cases/ataskaita-klientui/">
+    
+    <meta property="og:title" content="Ataskaitos klientams su Rangis">
+    <meta property="og:description" content="Profesionalios statybos progreso ataskaitos per kelias sekundes.">
+    <meta property="og:url" content="https://www.vilca.site/apps/rangis/use-cases/ataskaita-klientui/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png">
+    
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #181818 0%, #232323 100%);
+            color: #fff;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+        .breadcrumb { margin-bottom: 24px; font-size: 0.9rem; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #FF9800; }
+        .breadcrumb span { color: #666; margin: 0 8px; }
+        h1 { color: #FF9800; font-size: 2rem; margin-bottom: 16px; }
+        .intro { color: #ccc; font-size: 1.1rem; margin-bottom: 32px; }
+        .step {
+            background: #232323;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid #FF9800;
+        }
+        .step-number {
+            background: #FF9800;
+            color: #181818;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        .step h2 { color: #FFD700; font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; }
+        .step p { color: #bbb; }
+        .report-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .report-type {
+            background: #2a2a2a;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .report-type h3 { color: #FFD700; margin: 12px 0 8px; }
+        .report-type p { color: #888; font-size: 0.9rem; }
+        .cta {
+            background: linear-gradient(90deg, #FF9800, #FFD700);
+            color: #181818;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 24px;
+        }
+        nav.internal-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+        nav.internal-links a {
+            color: #FF9800;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #FF9800;
+            border-radius: 8px;
+        }
+        footer { text-align: center; padding: 32px; color: #666; }
+        footer a { color: #FF9800; text-decoration: none; }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Kaip sukurti ataskaitą klientui su Rangis",
+        "description": "Vadovas profesionalių statybos progreso ataskaitų generavimui.",
+        "image": "https://www.vilca.site/assets/assets/rangis_premium_icon_1024.png",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Pasirinkite projektą",
+                "text": "Atidarykite projektą, kuriam norite generuoti ataskaitą."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Paspauskite 'Ataskaita'",
+                "text": "Meniu pasirinkite 'Generuoti ataskaitą' ir nustatykite laikotarpį."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Pasirinkite formatą",
+                "text": "Eksportuokite kaip PDF, pasidalinkite nuoroda arba siųskite el. paštu."
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">VilcA</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Rangis</a>
+            <span>›</span>
+            <a href="/apps/rangis/">Naudojimo atvejai</a>
+            <span>›</span>
+            Ataskaita klientui
+        </nav>
+        
+        <h1>📊 Ataskaita klientui</h1>
+        <p class="intro">Sukurkite profesionalias statybos progreso ataskaitas per kelias sekundes. Automatiškai surinkta informacija, gražus dizainas, patenkinti klientai.</p>
+        
+        <div class="report-types">
+            <div class="report-type">
+                <div style="font-size: 2.5rem;">📄</div>
+                <h3>PDF ataskaita</h3>
+                <p>Profesionalus dokumentas su jūsų logotipu</p>
+            </div>
+            <div class="report-type">
+                <div style="font-size: 2.5rem;">🔗</div>
+                <h3>Interaktyvi nuoroda</h3>
+                <p>Klientas mato progresą realiu laiku</p>
+            </div>
+            <div class="report-type">
+                <div style="font-size: 2.5rem;">📧</div>
+                <h3>El. paštas</h3>
+                <p>Automatinis siuntimas pagal grafiką</p>
+            </div>
+        </div>
+        
+        <h2 style="color: #FF9800; margin: 32px 0 24px;">Kaip generuoti ataskaitą?</h2>
+        
+        <div class="step">
+            <h2><span class="step-number">1</span> Pasirinkite projektą</h2>
+            <p>Atidarykite projektą, kuriam norite generuoti ataskaitą. Įsitikinkite, kad užduotys ir progresas yra atnaujinti.</p>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">2</span> Paspauskite „Ataskaita"</h2>
+            <p>Projekto meniu pasirinkite <strong>„Generuoti ataskaitą"</strong>. Nustatykite:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li>Laikotarpį (savaitė, mėnuo, visas projektas)</li>
+                <li>Ką įtraukti (progresą, nuotraukas, išlaidas)</li>
+                <li>Ar rodyti kainas klientui</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">3</span> Pasirinkite formatą ir siųskite</h2>
+            <p>Eksportuokite ataskaita pasirinktu formatu:</p>
+            <ul style="margin: 12px 0 0 24px; color: #bbb;">
+                <li><strong>PDF</strong> – atsisiųskite arba siųskite el. paštu</li>
+                <li><strong>Nuoroda</strong> – klientas gali peržiūrėti bet kada</li>
+                <li><strong>Automatinis siuntimas</strong> – nustatykite savaitinį grafiką</li>
+            </ul>
+        </div>
+        
+        <div style="background: #232323; padding: 24px; border-radius: 12px; margin: 24px 0;">
+            <h3 style="color: #FFD700; margin-bottom: 16px;">📋 Ką apima ataskaita?</h3>
+            <ul style="margin-left: 24px; color: #bbb;">
+                <li>Bendras projekto progresas (procentais)</li>
+                <li>Atlikti darbai per laikotarpį</li>
+                <li>Artėjantys darbai ir terminai</li>
+                <li>Nuotraukos „prieš/po"</li>
+                <li>Išlaidų suvestinė (jei įjungta)</li>
+                <li>Problemos ir komentarai</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 32px;">
+            <a href="#TODO-DOWNLOAD" class="cta">📱 Išbandyti ataskaitas nemokamai</a>
+        </div>
+        
+        <nav class="internal-links">
+            <a href="/apps/rangis/use-cases/medziagos/">← Medžiagos</a>
+            <a href="/apps/rangis/">Rangis</a>
+            <a href="/apps/rangis/use-cases/foto-pries-po/">Foto prieš/po →</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>© 2025 VilcA. Visos teisės saugomos.</p>
+        <p><a href="/">Pagrindinis</a> · <a href="/apps/rangis/faq/">DUK</a></p>
+    </footer>
+</body>
+</html>
