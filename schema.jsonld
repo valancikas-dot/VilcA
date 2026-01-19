@@ -103,6 +103,14 @@
         "Cloud sync"
       ],
       "keywords": "construction management, contractor app, building project, estimate calculator, material tracking, renovation app, statybos valdymas, rangos darbai",
+      "downloadUrl": [
+        "https://play.google.com/store/apps/details?id=com.fazero.fazero",
+        "https://apps.apple.com/gb/app/fazero/id6756441336"
+      ],
+      "installUrl": [
+        "https://play.google.com/store/apps/details?id=com.fazero.fazero",
+        "https://apps.apple.com/gb/app/fazero/id6756441336"
+      ],
       "audience": {
         "@type": "Audience",
         "audienceType": "Construction professionals",
@@ -133,13 +141,13 @@
         "@type": "Offer",
         "price": "14.99",
         "priceCurrency": "EUR",
-        "availability": "https://schema.org/PreOrder",
+        "availability": "https://schema.org/InStock",
         "seller": {
           "@id": "https://www.vilca.site/#organization"
         }
       },
       "softwareVersion": "1.0",
-      "releaseNotes": "Coming soon",
+      "releaseNotes": "Now available on iOS and Android",
       "inLanguage": ["lt", "en"],
       "isAccessibleForFree": false,
       "featureList": [
@@ -152,6 +160,14 @@
         "Work logbook"
       ],
       "keywords": "electrical testing, electrician app, protocol generator, LST HD 60364, insulation resistance, grounding test, elektros bandymai, protokolai",
+      "downloadUrl": [
+        "https://play.google.com/store/apps/details?id=com.fazero.fazero",
+        "https://apps.apple.com/gb/app/fazero/id6756441336"
+      ],
+      "installUrl": [
+        "https://play.google.com/store/apps/details?id=com.fazero.fazero",
+        "https://apps.apple.com/gb/app/fazero/id6756441336"
+      ],
       "audience": {
         "@type": "Audience",
         "audienceType": "Electricians and electrical inspectors",

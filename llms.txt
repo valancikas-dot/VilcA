@@ -50,10 +50,13 @@ Fazero is a mobile application for electrical installation testing and protocol 
 **Target Users:** Electricians, electrical inspectors, installation companies
 **Pricing:** €14.99/month subscription
 **Languages:** Lithuanian, English
-**Platforms:** Coming soon to iOS and Android
-**Status:** In development
+**Platforms:** iOS and Android
+**Status:** Available on iOS and Android
 
 **Links:**
+- Google Play: https://play.google.com/store/apps/details?id=com.fazero.fazero
+- App Store: https://apps.apple.com/gb/app/fazero/id6756441336
+- Fazero Website: https://www.fazero.vip
 - Website: https://www.vilca.site/apps/fazero/index.html
 - Pricing: https://www.vilca.site/apps/fazero/pricing/index.html
 - FAQ: https://www.vilca.site/apps/fazero/faq/index.html

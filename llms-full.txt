@@ -98,8 +98,8 @@ A: Yes, Rangis works internationally but is optimized for Lithuanian constructio
 ### Q: What makes Rangis different from other construction apps?
 A: Rangis is designed specifically for small to medium contractors in Lithuania, with native Lithuanian language, offline support for construction sites, and simple all-inclusive pricing.
 
-### Q: Is Fazero available now?
-A: Fazero is currently in development. Users can sign up for notifications on the website.
+### Q: When was Fazero released?
+A: Fazero was released in January 2026 and is now available on iOS App Store and Google Play Store.
 
 ### Q: Does Fazero work with specific measurement devices?
 A: Fazero allows manual input of measurements from any calibrated testing equipment.
