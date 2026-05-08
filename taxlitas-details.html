@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Taxlitas – Aprašymas</title>
+    <script src="taxlitas-lang.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background:#081124; color:#fff; margin:0; }
+        .container { max-width:700px; margin:48px auto; background:#0f1724; border-radius:12px; padding:28px; }
+        .logo { display:block; margin:0 auto 18px auto; height:96px; }
+        h1 { text-align:center; color:#8be9ff; margin-bottom:12px; }
+        .section-title { color:#8be9ff; margin-top:20px; margin-bottom:8px; }
+        ul { margin-left:20px; }
+        .price { font-size:1.2em; color:#7dd3fc; margin-top:8px; }
+        #back-link { background:linear-gradient(90deg,#06b6d4,#7dd3fc); color:#06202a; padding:12px 28px; border-radius:10px; border:none; cursor:pointer; display:inline-block; margin-top:18px; font-weight:700; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="icons/taxlitas.svg" class="logo">
+        <h1 data-i18n="title"></h1>
+        <div class="section-title" data-i18n="features"></div>
+        <ul>
+            <li data-i18n="feature_1"></li>
+            <li data-i18n="feature_2"></li>
+            <li data-i18n="feature_3"></li>
+            <li data-i18n="feature_4"></li>
+            <li data-i18n="feature_5"></li>
+            <li data-i18n="feature_6"></li>
+        </ul>
+        <div class="section-title" data-i18n="price"></div>
+        <div class="price" data-i18n="price_text"></div>
+        <div class="section-title" data-i18n="target"></div>
+        <div class="target" data-i18n="target_text"></div>
+
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="back-link" data-i18n="back" onclick="window.location.href='apps/taxlitas/index.html'"></button>
+            <a href="https://www.taxlitas.site" style="text-decoration:none;"><button style="padding:12px 20px;border-radius:10px;border:none;background:#06202a;color:#7dd3fc;font-weight:700;">🌐 Atidaryti svetainę</button></a>
+        </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+        <button onclick="switchLanguage('lt')">LT</button>
+        <button onclick="switchLanguage('en')">EN</button>
+    </div>
+</body>
+</html>
